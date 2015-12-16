@@ -10,7 +10,7 @@ jQuery(function() {
   });
 
   // Download the data from the JSON file we generated
-  window.data = $.getJSON('/usda.json');
+  window.data = $.getJSON('usda.json');
 
   // Wait for the data to load and add it to lunr
   window.data.then(function(loaded_data){
