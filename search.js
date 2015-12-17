@@ -39,7 +39,7 @@ jQuery(function() {
         $search_results.empty(); // Clear any old results
         
         // Build a snippet of HTML for this result
-        var appendHeading = '<th>Description</th><th>Phenylalanine per 100 g</th><th>Protein per 100 g</th><th>Energy per 100 g</th>';
+        var appendHeading = '<th>Description</th><th>Phenyl&shy;alanine per 100 g</th><th>Protein per 100 g</th><th>Energy per 100 g</th>';
         
         // Add it to the results
         $search_results.append(appendHeading);
