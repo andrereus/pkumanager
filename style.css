@@ -1,10 +1,12 @@
 body {
   max-width: 960px;
   margin: 0 auto;
+  padding: 5px 10px;
 }
 
 table {
   width: 100%;
+  margin-top: 16px;
 }
 
 table, th, td {
@@ -18,4 +20,8 @@ th, td {
 
 th {
   text-align: left;
+}
+
+.float-right {
+  float: right;
 }

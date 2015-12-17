@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>PKU Manager</h1>
-    <p>Search for food, phenylalanine *, protein and energy. More features are added over time.</p>
+    <p>Search for food, phenylalanine (*), protein and energy. More features are added over time.</p>
   
     <form action="get" id="site_search">
       <label for="search_box">Search</label>
@@ -17,11 +17,8 @@
       <input type="submit" value="Search">
     </form>
 
-    <br>
     <table id="search_results"></table>
-    <br>
-    <a href="about.html">About</a>
-    <p>* Divide by 1000 before searching.</p>
+    <p>(*) Divide by 1000 before searching (e.g. "0.12" for 120 mg). <a href="about.html" class="float-right">About</a></p>
 
     <script src="lunr.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
