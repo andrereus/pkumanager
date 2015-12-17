@@ -5,56 +5,23 @@
     <title>PKU Manager</title>
     <meta name="description" content="Search for food, phenylalanine, protein and energy. More features are added over time.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title" id="pmtitle">PKU Manager</span>
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                      mdl-textfield--floating-label mdl-textfield--align-right">
-            <form action="get" id="site_search">
-              <label class="mdl-button mdl-js-button mdl-button--icon" for="search_box">
-                <i class="material-icons" id="pmsearch">search</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search_box">
-              </div>
-            </form>
-          </div>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Navigation</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="index.html">Home</a>
-          <a class="mdl-navigation__link" href="about.html">About</a>
-        </nav>
-      </div>
-      <main class="mdl-layout__content">
-        <div class="page-content">
-          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" id="search_results">
-            <tr>
-              <td class="mdl-data-table__cell--non-numeric">
-                <p>Search for food, phenylalanine *, protein and energy with the search bar in the top right corner.<br>
-                * Divide phenylalanine by 1000 before searching (e.g. "0.12" for 120 mg).</p>
-                <p>More features are added over time to PKU Manager.</p>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </main>
-    </div>
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <h1>PKU Manager</h1>
+    <p>Search for food, phenylalanine (*), protein and energy. More features are added over time.</p>
+  
+    <form action="get" id="site_search">
+      <label for="search_box">Search</label>
+      <input type="text" id="search_box">
+      <input type="submit" value="Search">
+    </form>
+
+    <table id="search_results"></table>
+    <p>(*) Divide by 1000 before searching (e.g. "0.12" for 120 mg). <a href="about.html" class="float-right">About</a></p>
+
     <script src="lunr.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="search.js"></script>
   </body>
 </html>

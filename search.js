@@ -39,29 +39,23 @@ jQuery(function() {
         $search_results.empty(); // Clear any old results
         
         // Build a snippet of HTML for this result
-        var appendHeader = '<thead><tr><th class="mdl-data-table__cell--non-numeric">Description</th><th>Phenyl&shy;alanine per 100 g</th><th>Protein per 100 g</th><th>Energy per 100 g</th></tr></thead><tbody>';
+        var appendHeading = '<th>Description</th><th>Phenyl&shy;alanine per 100 g</th><th>Protein per 100 g</th><th>Energy per 100 g</th>';
         
         // Add it to the results
-        $search_results.append(appendHeader);
+        $search_results.append(appendHeading);
 
         // Iterate over the results
         results.forEach(function(result) {
           var item = loaded_data[result.ref];
 
           // Build a snippet of HTML for this result
-          var appendString = '<tr><td class="mdl-data-table__cell--non-numeric">'+ item.desc +'</td><td>'+ item.phe*1000 +' mg</td><td>'+ item.prot +' g</td><td>'+ item.kcal +' kcal</td></tr>';
+          var appendString = '<tr><td>'+ item.desc +'</td><td>'+ item.phe*1000 +' mg</td><td>'+ item.prot +' g</td><td>'+ item.kcal +' kcal</td></tr>';
 
           // Add it to the results
           $search_results.append(appendString);
         });
-        
-        // Build a snippet of HTML for this result
-        var appendFooter = '</tbody>';
-        
-        // Add it to the results
-        $search_results.append(appendFooter);
       } else {
-        $search_results.html('<tr><td class="mdl-data-table__cell--non-numeric">No results found.</td></tr>');
+        $search_results.html('<tr><td>No results found.</td></tr>');
       }
     });
   }
