@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>PKU Manager</title>
-    <meta name="description" content="PKU Manager">
+    <title>PKU Manager | Search</title>
+    <meta name="description" content="PKU Manager | Search">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,10 +24,21 @@
     </header>
     
     <section>
-      <h2>Home</h2>
-      <p>PKU Manager is a new project from the author of the <a href="http://pherechner.de/">Phe Rechner</a> app.</p>
-      <p>Search for food, phenylalanine, protein and energy.</p>
-      <p>More features are added over time.</p>
+      <h2>Search</h2>
+      <p>Search for food, phenylalanine, protein and energy. Divide phenylalanine by 1000 before searching (e.g. "0.12" for 120 mg).</p>
+
+      <form action="get" id="site_search">
+        <label for="search_box">Search</label>
+        <input type="text" id="search_box">
+        <input type="reset" value="X">
+        <input type="submit" value="Search">
+      </form>
+
+      <table id="search_results"></table>
     </section>
+
+    <script src="lunr.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="search.js"></script>
   </body>
 </html>
