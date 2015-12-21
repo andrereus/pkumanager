@@ -7,5 +7,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    JavaScript, CSS3, HTML5
-    Lunr.js, jQuery, Normalize.css, HTML5 Shiv
+    HTML5, CSS3, JavaScript
