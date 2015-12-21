@@ -3,13 +3,9 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Author: Andre Reus
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    jQuery, Normalize.css
+    JavaScript, CSS3, HTML5
+    Lunr.js, jQuery, Normalize.css, HTML5 Shiv
