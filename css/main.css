@@ -95,21 +95,49 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
 
+header, section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5px;
+}
 
+h1 {
+    float: left;
+}
 
+nav {
+    float: right;
+}
 
+header > div:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
+table {
+    width: 100%;
+    margin-top: 16px;
+}
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
+th, td {
+    padding: 4px;
+}
 
-
-
-
-
-
-
-
+th {
+    text-align: left;
+}
 
 /* ==========================================================================
    Helper classes
