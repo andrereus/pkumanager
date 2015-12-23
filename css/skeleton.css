@@ -416,3 +416,10 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+
+/* Author's custom styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nowrap {
+    white-space: nowrap;
+}
