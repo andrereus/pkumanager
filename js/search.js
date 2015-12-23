@@ -39,7 +39,7 @@ jQuery(function() {
                 $search_results.empty(); // Clear any old results
 
                 // Build a snippet of HTML for this result
-                var appendHeader = '<th>Description</th><th>Phenyl&shy;alanine per 100 g</th><th>Protein per 100 g</th><th>Energy per 100 g</th>';
+                var appendHeader = '<thead><tr><th>Description</th><th>Phenyl&shy;alanine per 100 g</th><th>Protein per 100 g</th><th>Energy per 100 g</th></tr></thead><tbody>';
 
                 // Add it to the results
                 $search_results.append(appendHeader);
@@ -54,8 +54,14 @@ jQuery(function() {
                     // Add it to the results
                     $search_results.append(appendString);
                 });
+
+                // Build a snippet of HTML for this result
+                var appendFooter = '</tbody>';
+
+                // Add it to the results
+                $search_results.append(appendFooter);
             } else {
-                $search_results.html('<tr><td>No results found.</td></tr>');
+                $search_results.html('<tbody><tr><td>No results found.</td></tr></tbody>');
             }
         });
     }
