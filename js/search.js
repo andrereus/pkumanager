@@ -49,7 +49,7 @@ jQuery(function() {
                     var item = loaded_data[result.ref];
 
                     // Build a snippet of HTML for this result
-                    var appendString = '<tr><td>'+ item.desc +'</td><td>'+ item.phe*1000 +' mg</td><td>'+ item.prot +'&nbsp;g</td><td>'+ item.kcal +' kcal</td></tr>';
+                    var appendString = '<tr><td>'+ item.desc +'</td><td class="nowrap">'+ item.phe*1000 +' mg</td><td class="nowrap">'+ item.prot +' g</td><td>'+ item.kcal +' kcal</td></tr>';
 
                     // Add it to the results
                     $search_results.append(appendString);
