@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PKU Manager | Menu</title>
-        <meta name="description" content="PKU Manager | Menu">
+        <title>PKU Manager | Edit</title>
+        <meta name="description" content="PKU Manager | Edit">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700">
@@ -35,10 +35,24 @@
         </header>
 
         <section>
-            <h2>Menu</h2>
-            <a href="settings.html" class="button">Settings</a>
-            <br>
-            <a href="about.html" class="button">About</a>
+            <h2>Edit</h2>
+            <p>This feature is planned!</p>
+
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name">
+                <label for="weight">Weight in g</label>
+                <input type="text" id="weight" value="100">
+                <label for="phenylalanine">Phenylalanine in mg</label>
+                <input type="text" id="phenylalanine">
+                <label for="protein">Protein in g</label>
+                <input type="text" id="protein">
+                <label for="energy">Energy in kcal</label>
+                <input type="text" id="energy">
+                <br>
+                <input type="submit" value="Save" class="button-primary">
+                <input type="submit" value="Delete">
+            </form>
         </section>
     </body>
 </html>
