@@ -459,6 +459,7 @@ header {
     height: 49px;
     border-bottom: 1px solid #e1e1e1;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 h1 {
@@ -472,7 +473,11 @@ nav {
 nav > a {
     text-decoration: none;
     font-size: 1.8rem;
-    padding: 10px 15px;
+    padding: 15px;
+}
+
+nav > a:active {
+    background: #e1e1e1;
 }
 
 .link-name {
@@ -540,6 +545,15 @@ there.
 @media (max-width: 425px) {
     h1 {
         display: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav > a {
+        padding-left: 9%;
+        padding-right: 9%;
     }
 }
 
