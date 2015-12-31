@@ -1,3 +1,4 @@
+var type = document.getElementById("type");
 var description = document.getElementById("name");
 var weight = document.getElementById("weight");
 var phenylalanine = document.getElementById("phenylalanine");
@@ -15,10 +16,11 @@ if (add.addEventListener) {
 }
 
 function save() {
-    var desc = description.value,
+    var typ = type.value,
+        desc = description.value,
         wg = weight.value,
         phe = phenylalanine.value,
         prot = protein.value,
         kcal = energy.value;
-    console.log(desc, wg, phe, prot, kcal);
+    console.log(typ, desc, wg, phe, prot, kcal);
 }
