@@ -39,6 +39,13 @@
             <p>This feature is planned!</p>
 
             <form>
+                <label for="type">Type</label>
+                <select id="type">
+                    <option value="default" selected disabled class="hidden">Default</option>
+                    <option value="fruit">Fruit</option>
+                    <option value="vegetable">Vegetable</option>
+                    <option value="other">Other</option>
+                </select>
                 <label for="name">Name</label>
                 <input type="text" id="name">
                 <label for="weight">Weight in g</label>
@@ -50,8 +57,8 @@
                 <label for="energy">Energy in kcal</label>
                 <input type="text" id="energy">
                 <br>
-                <input type="button" value="Save" class="button-primary">
-                <input type="submit" value="Delete">
+                <input type="button" value="Save" class="button-primary" id="edit">
+                <input type="button" value="Delete">
             </form>
         </section>
     </body>
