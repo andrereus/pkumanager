@@ -662,6 +662,10 @@ th, td {
     margin-left: 10px;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {
     h1 {
