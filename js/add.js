@@ -6,7 +6,6 @@ var protein = document.getElementById("protein");
 var energy = document.getElementById("energy");
 
 var add = document.getElementById("add");
-
 var save;
 
 if (add.addEventListener) {
@@ -39,7 +38,5 @@ function save() {
 
     day.push(food);
     localStorage.setItem("day", JSON.stringify(day));
-    
-    var today = JSON.parse(localStorage.getItem("day"));
-    console.log(today);
+    window.location.assign("index.html");
 }
