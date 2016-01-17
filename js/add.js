@@ -16,35 +16,30 @@ if (add.addEventListener) {
 }
 
 function save() {
+    var day,
+        id;
+    
     if (localStorage.getItem("day") !== null) {
-        var list = JSON.parse(localStorage.getItem("day"));
-
-        var food = {
-            "id": 1,
-            "typ": type.value,
-            "desc": description.value,
-            "wg": weight.value,
-            "phe": phenylalanine.value,
-            "prot": protein.value,
-            "kcal": energy.value
-        };
-
-        list.push(food);
-        localStorage.setItem("day", JSON.stringify(list));
+        day = JSON.parse(localStorage.getItem("day"));
+        id = day[day.length - 1].id + 1;
     } else {
-        var day = [{
-            "id": 1,
-            "typ": type.value,
-            "desc": description.value,
-            "wg": weight.value,
-            "phe": phenylalanine.value,
-            "prot": protein.value,
-            "kcal": energy.value
-        }];
-
-        localStorage.setItem("day", JSON.stringify(day));
+        day = [];
+        id = 1;
     }
+    
+    var food = {
+        "id": id,
+        "typ": type.value,
+        "desc": description.value,
+        "wg": Number(weight.value),
+        "phe": Number(phenylalanine.value),
+        "prot": Number(protein.value),
+        "kcal": Number(energy.value)
+    };
 
+    day.push(food);
+    localStorage.setItem("day", JSON.stringify(day));
+    
     var today = JSON.parse(localStorage.getItem("day"));
     console.log(today);
 }
