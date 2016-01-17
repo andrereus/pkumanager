@@ -1,5 +1,4 @@
 var reset = document.getElementById("reset");
-
 var resetapp;
 
 if (reset.addEventListener) {
