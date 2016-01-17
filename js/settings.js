@@ -10,5 +10,5 @@ if (reset.addEventListener) {
 
 function resetapp() {
     localStorage.clear();
-    alert("Reset done");
+    alert("Reset done.");
 }
