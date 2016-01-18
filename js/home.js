@@ -12,9 +12,9 @@ if (localStorage.getItem("day") !== null) {
     for (var i = 0; i < list.length; i++) {
         table += "<tr><td>" +
             list[i].desc + "</td><td class=\"nowrap\">" +
-            list[i].phe + " mg</td><td class=\"nowrap\">" +
-            list[i].prot + " g</td><td>" +
-            list[i].kcal + " kcal</td></tr>";
+            list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
+            list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
+            list[i].kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
     }
 
     table += "</tbody><br><p>Reset list under <a href=\"settings.html\">Settings</a>.</p>";
