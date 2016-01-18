@@ -21,7 +21,7 @@ if (localStorage.getItem("day") !== null) {
         date = new Date(list[i].date);
 
         table += "<tr><td>" +
-            addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + " - " +
+            // addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + " - " +
             list[i].wg + "&nbsp;g " + list[i].desc + "</td><td class=\"nowrap\">" +
             list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
             list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
