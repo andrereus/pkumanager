@@ -17,7 +17,7 @@ if (add.addEventListener) {
 function save() {
     var day,
         id;
-    
+
     if (localStorage.getItem("day") !== null) {
         day = JSON.parse(localStorage.getItem("day"));
         id = day[day.length - 1].id + 1;
@@ -25,10 +25,12 @@ function save() {
         day = [];
         id = 1;
     }
-    
+
+    var date = new Date();
     var food = {
         "id": id,
-        "typ": type.value,
+        "date": date,
+        "type": type.value,
         "desc": description.value,
         "wg": Number(weight.value),
         "phe": Number(phenylalanine.value),
