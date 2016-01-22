@@ -4,7 +4,6 @@ var weight = document.getElementById("weight");
 var phenylalanine = document.getElementById("phenylalanine");
 var protein = document.getElementById("protein");
 var energy = document.getElementById("energy");
-
 var add = document.getElementById("add");
 var save;
 
@@ -15,8 +14,8 @@ if (add.addEventListener) {
 }
 
 function save() {
-    var day,
-        id;
+    var day, id,
+        date = new Date();
 
     if (localStorage.getItem("day") !== null) {
         day = JSON.parse(localStorage.getItem("day"));
@@ -26,7 +25,6 @@ function save() {
         id = 1;
     }
 
-    var date = new Date();
     var food = {
         "id": id,
         "date": date,
@@ -44,6 +42,8 @@ function save() {
 }
 
 //Calculate
+var calculate;
+
 if (weight.addEventListener) {
     weight.addEventListener("keyup", calculate);
 } else if (weight.attachEvent) {
@@ -51,12 +51,12 @@ if (weight.addEventListener) {
 }
 
 function calculate() {
-    var wg = document.getElementById("weight").value;
-    var phe = document.getElementById("phenylalanine").value;
-    var prot = document.getElementById("protein").value;
-    var kcal = document.getElementById("energy").value;
+    var wg = document.getElementById("weight").value,
+        phe = document.getElementById("phenylalanine").value,
+        prot = document.getElementById("protein").value,
+        kcal = document.getElementById("energy").value;
     phenylalanine.value = wg * phe / 100;
     protein.value = wg * prot / 100;
     energy.value = wg * kcal / 100;
-    console.log(wg, phe, prot, kcal, "---", phenylalanine.value, protein.value, energy.value)
+    console.log(wg, phe, prot, kcal, "---", phenylalanine.value, protein.value, energy.value);
 }
