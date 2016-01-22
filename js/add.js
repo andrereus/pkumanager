@@ -42,3 +42,21 @@ function save() {
     localStorage.setItem("day", JSON.stringify(day));
     window.location.assign("index.html");
 }
+
+//Calculate
+if (weight.addEventListener) {
+    weight.addEventListener("keyup", calculate);
+} else if (weight.attachEvent) {
+    weight.attachEvent("keyup", calculate);
+}
+
+function calculate() {
+    var wg = document.getElementById("weight").value;
+    var phe = document.getElementById("phenylalanine").value;
+    var prot = document.getElementById("protein").value;
+    var kcal = document.getElementById("energy").value;
+    phenylalanine.value = wg * phe / 100;
+    protein.value = wg * prot / 100;
+    energy.value = wg * kcal / 100;
+    console.log(wg, phe, prot, kcal, "---", phenylalanine.value, protein.value, energy.value)
+}
