@@ -49,16 +49,37 @@ function save() {
 }
 
 /* Calculate */
-var calculate;
-addListener(weight, "keyup", calculate);
+var check, wgcalc, phecalc, protcalc, kcalcalc;
+addListener(calculate, "click", check);
 
-function calculate() {
-    var wg = document.getElementById("weight").value,
-        phe = document.getElementById("phenylalanine").value,
-        prot = document.getElementById("protein").value,
-        kcal = document.getElementById("energy").value;
-    phenylalanine.value = wg * phe / 100;
-    protein.value = wg * prot / 100;
-    energy.value = wg * kcal / 100;
-    console.log(wg, phe, prot, kcal, "---", phenylalanine.value, protein.value, energy.value);
+function check() {
+    if (calculate.checked) {
+        localStorage.setItem("weight", weight.value);
+        localStorage.setItem("phenylalanine", phenylalanine.value);
+        localStorage.setItem("protein", protein.value);
+        localStorage.setItem("energy", energy.value);
+
+        addListener(weight, "keyup", wgcalc);
+        addListener(phenylalanine, "keyup", phecalc);
+        addListener(protein, "keyup", protcalc);
+        addListener(energy, "keyup", kcalcalc);
+    }
+}
+
+function wgcalc() {
+    phenylalanine.value = weight.value * localStorage.getItem("phenylalanine") / 100;
+    protein.value = weight.value * localStorage.getItem("protein") / 100;
+    energy.value = weight.value * localStorage.getItem("energy") / 100;
+}
+
+function phecalc() {
+
+}
+
+function protcalc() {
+
+}
+
+function kcalcalc() {
+
 }
