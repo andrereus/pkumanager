@@ -16,6 +16,22 @@ function addListener(element, event, funct) {
     }
 }
 
+function addParameter(element, event, funct, p1, p2) {
+    if (element.addEventListener) {
+        return element.addEventListener(event, function() { funct(p1, p2); });
+    } else if (element.attachEvent) {
+        return element.attachEvent(event, function() { funct(p1, p2); });
+    }
+}
+
+function removeParameter(element, event, funct, p1, p2) {
+    if (element.removeEventListener) {
+        return element.removeEventListener(event, function() { funct(p1, p2); });
+    } else if (element.detachEvent) {
+        return element.detachEvent(event, function() { funct(p1, p2); });
+    }
+}
+
 /* Save */
 var save;
 addListener(add, "click", save);
@@ -49,7 +65,7 @@ function save() {
 }
 
 /* Calculate */
-var check, wgcalc, phecalc, protcalc, kcalcalc;
+var check, calc;
 addListener(calculate, "click", check);
 
 function check() {
@@ -59,27 +75,22 @@ function check() {
         localStorage.setItem("protein", protein.value);
         localStorage.setItem("energy", energy.value);
 
-        addListener(weight, "keyup", wgcalc);
-        addListener(phenylalanine, "keyup", phecalc);
-        addListener(protein, "keyup", protcalc);
-        addListener(energy, "keyup", kcalcalc);
+        addParameter(weight, "keyup", calc, weight, "weight");
+        addParameter(phenylalanine, "keyup", calc, phenylalanine, "phenylalanine");
+        addParameter(protein, "keyup", calc, protein, "protein");
+        addParameter(energy, "keyup", calc, energy, "energy");
+    } else {
+        //Change this: Anonymous function can't be removed ...
+        removeParameter(weight, "keyup", calc, weight, "weight");
+        removeParameter(phenylalanine, "keyup", calc, phenylalanine, "phenylalanine");
+        removeParameter(protein, "keyup", calc, protein, "protein");
+        removeParameter(energy, "keyup", calc, energy, "energy");
     }
 }
 
-function wgcalc() {
-    phenylalanine.value = weight.value * localStorage.getItem("phenylalanine") / 100;
-    protein.value = weight.value * localStorage.getItem("protein") / 100;
-    energy.value = weight.value * localStorage.getItem("energy") / 100;
-}
-
-function phecalc() {
-
-}
-
-function protcalc() {
-
-}
-
-function kcalcalc() {
-
+function calc(original, saved) {
+    weight.value = original.value * localStorage.getItem("weight") / localStorage.getItem(saved);
+    phenylalanine.value = original.value * localStorage.getItem("phenylalanine") / localStorage.getItem(saved);
+    protein.value = original.value * localStorage.getItem("protein") / localStorage.getItem(saved);
+    energy.value = original.value * localStorage.getItem("energy") / localStorage.getItem(saved);
 }
