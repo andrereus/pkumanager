@@ -1,3 +1,4 @@
+/* Initialize */
 var type = document.getElementById("type");
 var description = document.getElementById("name");
 var weight = document.getElementById("weight");
@@ -5,13 +6,19 @@ var phenylalanine = document.getElementById("phenylalanine");
 var protein = document.getElementById("protein");
 var energy = document.getElementById("energy");
 var add = document.getElementById("add");
-var save;
+var calculate = document.getElementById("calculate");
 
-if (add.addEventListener) {
-    add.addEventListener("click", save);
-} else if (add.attachEvent) {
-    add.attachEvent("onclick", save);
+function addListener(element, event, funct) {
+    if (element.addEventListener) {
+        return element.addEventListener(event, funct);
+    } else if (element.attachEvent) {
+        return element.attachEvent(event, funct);
+    }
 }
+
+/* Save */
+var save;
+addListener(add, "click", save);
 
 function save() {
     var day, id,
@@ -41,14 +48,9 @@ function save() {
     window.location.assign("index.html");
 }
 
-//Calculate
+/* Calculate */
 var calculate;
-
-if (weight.addEventListener) {
-    weight.addEventListener("keyup", calculate);
-} else if (weight.attachEvent) {
-    weight.attachEvent("keyup", calculate);
-}
+addListener(weight, "keyup", calculate);
 
 function calculate() {
     var wg = document.getElementById("weight").value,
