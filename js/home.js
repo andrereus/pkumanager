@@ -40,8 +40,9 @@ if (localStorage.getItem("day") !== null) {
         "Sum</td><td class=\"nowrap\">" +
         phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
         prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
-        kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>" +
-        "</tbody><br><p>Reset list under <a href=\"settings.html\">Settings</a>.</p>";
+        kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr></tbody><br><p>" +
+        "Reset list under <a href=\"settings.html\">Settings</a>.</p>";
+
     today.innerHTML = table;
 } else {
     var empty = "<tbody><tr><td>No food added.</td></tr></tbody>";
