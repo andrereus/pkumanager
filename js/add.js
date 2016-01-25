@@ -1,5 +1,4 @@
 /* Initialize */
-var type = document.getElementById("type");
 var description = document.getElementById("name");
 var weight = document.getElementById("weight");
 var phenylalanine = document.getElementById("phenylalanine");
@@ -43,7 +42,6 @@ function save() {
     var food = {
         "id": id,
         "date": date,
-        "type": type.value,
         "desc": description.value,
         "wg": Number(weight.value),
         "phe": Number(phenylalanine.value),
