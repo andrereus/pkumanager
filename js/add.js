@@ -81,3 +81,16 @@ function calc(original, saved) {
         return;
     }
 }
+
+/* Estimate */
+var estimate;
+addListener(phenylalanine, "blur", estimate);
+addListener(protein, "blur", estimate);
+
+function estimate() {
+    if (phenylalanine.value.length !== 0 && protein.value.length == 0) {
+        protein.value = phenylalanine.value / 50;
+    } else if (protein.value.length !== 0 && phenylalanine.value.length == 0) {
+        phenylalanine.value = protein.value * 50;
+    }
+}
