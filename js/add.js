@@ -72,7 +72,7 @@ function check() {
 }
 
 function calc(original, saved) {
-    if (calculate.checked) {
+    if (calculate.checked && original.value.length !== 0) {
         weight.value = original.value * localStorage.getItem("weight") / localStorage.getItem(saved);
         phenylalanine.value = original.value * localStorage.getItem("phenylalanine") / localStorage.getItem(saved);
         protein.value = original.value * localStorage.getItem("protein") / localStorage.getItem(saved);
