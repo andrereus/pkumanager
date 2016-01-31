@@ -28,8 +28,7 @@ var save;
 addListener(add, "click", save);
 
 function save() {
-    var day, id,
-        date = new Date();
+    var day, id;
 
     if (localStorage.getItem("day") !== null) {
         day = JSON.parse(localStorage.getItem("day"));
@@ -41,7 +40,7 @@ function save() {
 
     var food = {
         "id": id,
-        "date": date,
+        "date": new Date(),
         "desc": description.value,
         "wg": Number(weight.value),
         "phe": Number(phenylalanine.value),
@@ -77,8 +76,6 @@ function calc(original, saved) {
         phenylalanine.value = original.value * localStorage.getItem("phenylalanine") / localStorage.getItem(saved);
         protein.value = original.value * localStorage.getItem("protein") / localStorage.getItem(saved);
         energy.value = original.value * localStorage.getItem("energy") / localStorage.getItem(saved);
-    } else {
-        return;
     }
 }
 

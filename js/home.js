@@ -1,15 +1,7 @@
 var today = document.getElementById("today");
 
-function addZero(i) {
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
-}
-
 if (localStorage.getItem("day") !== null) {
     var list = JSON.parse(localStorage.getItem("day"));
-    var date;
     var phe = 0;
     var prot = 0;
     var kcal = 0;
@@ -21,10 +13,7 @@ if (localStorage.getItem("day") !== null) {
         "Energy</th></tr></thead><tbody>";
 
     for (var i = 0; i < list.length; i++) {
-        date = new Date(list[i].date);
-
         table += "<tr><td>" +
-            // addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + " - " +
             list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
             list[i].desc + "</td><td class=\"nowrap\">" +
             list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
@@ -45,6 +34,6 @@ if (localStorage.getItem("day") !== null) {
 
     today.innerHTML = table;
 } else {
-    var empty = "<tbody><tr><td>No food added.</td></tr></tbody>";
+    var empty = "<tbody><tr><td><a href=\"add.html\">Add food</a> to see it here.</td></tr></tbody>";
     today.innerHTML = empty;
 }
