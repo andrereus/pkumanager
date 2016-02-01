@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PKU Manager | Add</title>
-        <meta name="description" content="PKU Manager | Add">
+        <title>PKU Manager | Contact</title>
+        <meta name="description" content="PKU Manager | Contact">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -24,37 +24,27 @@
 
         <header>
             <div>
-                <h1 class="float-left">Add</h1>
+                <h1 class="float-left">Contact</h1>
                 <nav class="float-right">
                     <a href="index.html"><span class="fa fa-home"></span><span class="link-name">Home</span></a>
                     <a href="search.html"><span class="fa fa-search"></span><span class="link-name">Search</span></a>
-                    <a href="add.html" class="active-link"><span class="fa fa-plus"></span><span class="link-name">Add</span></a>
+                    <a href="add.html"><span class="fa fa-plus"></span><span class="link-name">Add</span></a>
                     <a href="menu.html"><span class="fa fa-bars"></span><span class="link-name">Menu</span></a>
                 </nav>
             </div>
         </header>
 
         <section>
-            <form class="add-edit">
+            <form action="https://formsubmit.io/send/67d48ca3-8687-49e5-94aa-e1c570045b10" method="post" class="add-edit">
+                <input name="_redirect" type="hidden" value="http://pkumanager.com/">
                 <label for="name">Name</label>
                 <input type="text" id="name">
-                <label for="weight">Weight in g</label>
-                <input type="number" id="weight" value="100">
-                <label for="phenylalanine">Phenylalanine in mg</label>
-                <input type="number" id="phenylalanine">
-                <label for="protein">Protein in g</label>
-                <input type="number" id="protein">
-                <label for="energy">Energy in kcal</label>
-                <input type="number" id="energy">
-                <input type="button" value="Save" id="add">
-                <input type="reset" value="Reset" class="button-outline">
-                <div class="float-right">
-                    <input type="checkbox" id="calculate">
-                    <label class="label-inline" for="calculate">Calculate with these values</label>
-                </div>
+                <label for="email">E-Mail</label>
+                <input type="text" id="email">
+                <label for="message">Message</label>
+                <textarea id="message"></textarea>
+                <input type="submit" value="Send">
             </form>
         </section>
-
-        <script src="js/add.js"></script>
     </body>
 </html>
