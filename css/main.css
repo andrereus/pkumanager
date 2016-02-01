@@ -680,6 +680,15 @@ th, td {
     width: 66%;
 }
 
+/* Temporary CSS */
+#site_search, #reset {
+    margin-top: 10px;
+}
+
+#site_search {
+    margin-bottom: 0;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {
     h1 {
