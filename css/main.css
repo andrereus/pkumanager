@@ -658,7 +658,7 @@ th, td {
     padding: 10px 5px;
 }
 
-td > a {
+.menu-link {
     display: block;
     width: 100%;
 }
