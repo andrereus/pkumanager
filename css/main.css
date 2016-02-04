@@ -689,6 +689,18 @@ th, td {
     margin-bottom: 0;
 }
 
+#beta {
+    font-size: 1.2rem;
+    color: #fff;
+    background: #9b4dca;
+    padding: 1px 4px;
+    border-radius: 4px;
+    position: absolute;
+    top: 4px;
+    margin-left: 138px;
+    cursor: pointer;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {
     h1 {
