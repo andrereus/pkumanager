@@ -699,6 +699,14 @@ th, td {
     cursor: pointer;
 }
 
+#instruction {
+    border: 2px solid #e1e1e1;
+    border-radius: 4px;
+    max-width: 80%;
+    display: block;
+    margin: 60px auto 0;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {
     h1 {
@@ -745,10 +753,18 @@ th, td {
     .add-edit {
         width: 100%;
     }
+
+    #instruction {
+        display: none;
+    }
 }
 
 /* Smaller than tablet */
-@media (max-width: 750px) {}
+@media (max-width: 750px) {
+    #instruction {
+        max-width: 100%;
+    }
+}
 
 /* Smaller than desktop */
 @media (max-width: 1000px) {}
