@@ -683,7 +683,7 @@ th, td {
 /* Headway */
 #HW_badge_cont {
     position: absolute !important;
-    top: 8px;
+    top: 0;
     margin-left: 130px;
 }
 
