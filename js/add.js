@@ -113,7 +113,6 @@ function grab(list) {
             phenylalanine.value = list[i].phe*1000;
             protein.value = list[i].prot;
             energy.value = list[i].kcal;
-            calculate.checked = true;
         }
     }
 }
