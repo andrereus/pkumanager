@@ -680,23 +680,17 @@ th, td {
     width: 66%;
 }
 
+/* Headway */
+#HW_badge_cont {
+    position: absolute !important;
+    top: 8px;
+    margin-left: 130px;
+}
+
 /* Temporary CSS */
 #site_search {
     margin-top: 10px;
     margin-bottom: 0;
-}
-
-#beta {
-    font-size: 1.2rem;
-    color: #fff;
-    background: #9b4dca;
-    padding: 1px 4px;
-    border-radius: 4px;
-    position: absolute;
-    display: block;
-    top: 4px;
-    margin-left: 138px;
-    cursor: pointer;
 }
 
 #instruction {
