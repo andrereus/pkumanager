@@ -2,6 +2,7 @@ jQuery(function() {
     // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
     window.idx = lunr(function() {
+        this.field('ndbno');
         this.field('desc', {boost: 10});
         this.field('phe');
         this.field('prot');
@@ -53,8 +54,8 @@ jQuery(function() {
                     var item = loaded_data[result.ref];
 
                     // Build a snippet of HTML for this result
-                    var appendBody = '<tr><td>' +
-                        item.desc + '</td><td class="nowrap">' +
+                    var appendBody = '<tr><td><a href="add.html?' + item.ndbno + '" class="table-link">' +
+                        item.desc + '</a></td><td class="nowrap">' +
                         (item.phe*1000).toFixed(2).replace(/\.?0+$/, "") + ' mg</td><td class="nowrap">' +
                         item.prot.toFixed(2).replace(/\.?0+$/, "") + ' g</td><td>' +
                         item.kcal.toFixed(2).replace(/\.?0+$/, "") + ' kcal</td></tr>';

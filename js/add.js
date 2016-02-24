@@ -91,3 +91,29 @@ function estimate() {
         phenylalanine.value = protein.value * 50;
     }
 }
+
+/* Grab */
+var searchId = location.search.replace("?", "");
+var xmlhttp = new XMLHttpRequest();
+var grab;
+
+xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        var searchFood = JSON.parse(xmlhttp.responseText);
+        grab(searchFood);
+    }
+};
+xmlhttp.open("GET", "data/usda.json", true);
+xmlhttp.send();
+
+function grab(list) {
+    for (var i = 0; i < list.length; i++) {
+        if (list[i].ndbno == searchId) {
+            description.value = list[i].desc;
+            phenylalanine.value = list[i].phe*1000;
+            protein.value = list[i].prot;
+            energy.value = list[i].kcal;
+            calculate.checked = true;
+        }
+    }
+}
