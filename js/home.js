@@ -15,9 +15,9 @@ if (localStorage.getItem("day") !== null) {
         "Energy</th></tr></thead><tbody>";
 
     for (var i = 0; i < list.length; i++) {
-        table += "<tr><td>" +
+        table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
             list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
-            list[i].desc + "</td><td class=\"nowrap\">" +
+            list[i].desc + "</a></td><td class=\"nowrap\">" +
             list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
             list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
             list[i].kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
