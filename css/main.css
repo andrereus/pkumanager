@@ -635,7 +635,7 @@ header > div, section {
 }
 
 header {
-    height: 49px;
+    height: 60px;
     border-bottom: 1px solid #e1e1e1;
     overflow: hidden;
     margin-bottom: 12px;
@@ -647,13 +647,14 @@ h1, h2 {
 
 #logo {
     position: absolute;
-    top: 5px;
+    top: 10px;
 }
 
 nav > a {
     text-decoration: none;
-    font-size: 1.8rem;
-    padding: 13px 17px;
+    font-size: 2rem;
+    line-height: 4rem;
+    padding: 18px;
 }
 
 nav > a:active {
@@ -665,7 +666,7 @@ th, td {
 }
 
 .active-link {
-    padding-bottom: 11px;
+    padding-bottom: 15px;
     border-bottom: 3px solid #9b4dca;
 }
 
