@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>PKU Manager | Settings</title>
-        <meta name="description" content="PKU Manager | Settings">
+        <title>PKU Manager | View</title>
+        <meta name="description" content="PKU Manager | View">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -28,20 +28,17 @@
                 <nav class="float-right">
                     <a href="search.html"><span class="fa fa-search"></span></a>
                     <a href="add.html"><span class="fa fa-plus"></span></a>
-                    <a href="view.html"><span class="fa fa-book"></span></a>
-                    <a href="menu.html" class="active-link"><span class="fa fa-bars"></span></a>
+                    <a href="view.html" class="active-link"><span class="fa fa-book"></span></a>
+                    <a href="menu.html"><span class="fa fa-bars"></span></a>
                 </nav>
             </div>
         </header>
 
         <section>
-            <p><a href="menu.html">Menu</a> / Settings</p>
-            <form>
-                <input type="button" value="Reset App" id="reset">
-            </form>
+            <table id="today"></table>
         </section>
 
-        <script src="js/settings.js"></script>
+        <script src="js/view.js"></script>
         <!-- Headway -->
         <script>
           var HW_config = {
