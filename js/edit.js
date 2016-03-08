@@ -44,7 +44,7 @@ function save() {
     }
 
     localStorage.setItem("day", JSON.stringify(list));
-    window.location.assign("index.html");
+    window.location.assign("view.html");
 }
 
 /* Delete */
@@ -64,7 +64,7 @@ function remove() {
     } else {
         localStorage.removeItem("day");
     }
-    window.location.assign("index.html");
+    window.location.assign("view.html");
 }
 
 /* Calculate */
