@@ -670,10 +670,6 @@ th, td {
     border-bottom: 3px solid #9b4dca;
 }
 
-.link-name {
-    margin-left: 10px;
-}
-
 .table-link {
     display: block;
     width: 100%;
@@ -711,27 +707,6 @@ th, td {
 
 /* Smaller than phablet (also point when grid becomes active) */
 @media (max-width: 550px) {
-    .link-name {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-
-    .link-name.focusable:active,
-    .link-name.focusable:focus {
-        clip: auto;
-        height: auto;
-        margin: 0;
-        overflow: visible;
-        position: static;
-        width: auto;
-    }
-
     #search_box {
         width: 59%;
     }
