@@ -9,5 +9,5 @@ if (reset.addEventListener) {
 
 function resetapp() {
     localStorage.clear();
-    window.location.assign("index.html");
+    alert("Reset done.");
 }

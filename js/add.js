@@ -50,7 +50,7 @@ function save() {
 
     day.push(food);
     localStorage.setItem("day", JSON.stringify(day));
-    window.location.assign("index.html");
+    window.location.assign("view.html");
 }
 
 /* Calculate */
