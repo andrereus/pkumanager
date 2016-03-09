@@ -28,10 +28,25 @@ if (localStorage.getItem("day") !== null) {
     }
 
     table += "<tr><td>" +
-        "Sum</td><td class=\"nowrap\">" +
+        "Total</td><td class=\"nowrap\">" +
         phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
         prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
-        kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr></tbody><br><p>" +
+        kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+
+    if (localStorage.getItem("tolerance") !== null) {
+        var tolerance = JSON.parse(localStorage.getItem("tolerance"));
+        var phetol = tolerance.phetol - phe;
+        var prottol = tolerance.prottol - prot;
+        var kcaltol = tolerance.kcaltol - kcal;
+
+        table += "<tr><td>" +
+            "Remaining</td><td class=\"nowrap\">" +
+            phetol.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
+            prottol.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
+            kcaltol.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+    }
+
+    table += "</tbody><br><p>" +
         "Reset food list under <a href=\"settings.html\">Settings</a>.</p>";
 
     today.innerHTML = table;
