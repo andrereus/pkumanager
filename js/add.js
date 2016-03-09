@@ -72,10 +72,10 @@ function check() {
 
 function calc(original, saved) {
     if (calculate.checked && original.value.length !== 0) {
-        weight.value = original.value * localStorage.getItem("weight") / localStorage.getItem(saved);
-        phenylalanine.value = original.value * localStorage.getItem("phenylalanine") / localStorage.getItem(saved);
-        protein.value = original.value * localStorage.getItem("protein") / localStorage.getItem(saved);
-        energy.value = original.value * localStorage.getItem("energy") / localStorage.getItem(saved);
+        weight.value = (original.value * localStorage.getItem("weight") / localStorage.getItem(saved)).toFixed(2).replace(/\.?0+$/, "");
+        phenylalanine.value = (original.value * localStorage.getItem("phenylalanine") / localStorage.getItem(saved)).toFixed(2).replace(/\.?0+$/, "");
+        protein.value = (original.value * localStorage.getItem("protein") / localStorage.getItem(saved)).toFixed(2).replace(/\.?0+$/, "");
+        energy.value = (original.value * localStorage.getItem("energy") / localStorage.getItem(saved)).toFixed(2).replace(/\.?0+$/, "");
     }
 }
 
@@ -86,9 +86,9 @@ addListener(protein, "blur", estimate);
 
 function estimate() {
     if (phenylalanine.value.length !== 0 && protein.value.length === 0) {
-        protein.value = phenylalanine.value / 50;
+        protein.value = (phenylalanine.value / 50).toFixed(2).replace(/\.?0+$/, "");
     } else if (protein.value.length !== 0 && phenylalanine.value.length === 0) {
-        phenylalanine.value = protein.value * 50;
+        phenylalanine.value = (protein.value * 50).toFixed(2).replace(/\.?0+$/, "");
     }
 }
 
@@ -110,9 +110,9 @@ function grab(list) {
     for (var i = 0; i < list.length; i++) {
         if (list[i].ndbno == searchId) {
             description.value = list[i].desc;
-            phenylalanine.value = list[i].phe*1000;
-            protein.value = list[i].prot;
-            energy.value = list[i].kcal;
+            phenylalanine.value = (list[i].phe*1000).toFixed(2).replace(/\.?0+$/, "");
+            protein.value = list[i].prot.toFixed(2).replace(/\.?0+$/, "");
+            energy.value = list[i].kcal.toFixed(2).replace(/\.?0+$/, "");
         }
     }
 }

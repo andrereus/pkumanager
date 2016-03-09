@@ -36,18 +36,18 @@ addListener(protein, "blur", estimate);
 
 function estimate() {
     if (phenylalanine.value.length !== 0 && protein.value.length === 0) {
-        protein.value = phenylalanine.value / 50;
+        protein.value = (phenylalanine.value / 50).toFixed(2).replace(/\.?0+$/, "");
     } else if (protein.value.length !== 0 && phenylalanine.value.length === 0) {
-        phenylalanine.value = protein.value * 50;
+        phenylalanine.value = (protein.value * 50).toFixed(2).replace(/\.?0+$/, "");
     }
 }
 
 /* Grab tolerance */
 if (localStorage.getItem("tolerance") !== null) {
     var tol = JSON.parse(localStorage.getItem("tolerance"));
-    phenylalanine.value = tol.phetol;
-    protein.value = tol.prottol;
-    energy.value = tol.kcaltol;
+    phenylalanine.value = tol.phetol.toFixed(2).replace(/\.?0+$/, "");
+    protein.value = tol.prottol.toFixed(2).replace(/\.?0+$/, "");
+    energy.value = tol.kcaltol.toFixed(2).replace(/\.?0+$/, "");
 }
 
 /* Reset food list */
