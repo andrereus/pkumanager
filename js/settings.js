@@ -26,7 +26,8 @@ function tolerance() {
     };
 
     localStorage.setItem("tolerance", JSON.stringify(need));
-    window.location.assign("view.html");
+    alert("Entries are saved.");
+    location.reload();
 }
 
 /* Estimate protein */
@@ -51,12 +52,15 @@ if (localStorage.getItem("tolerance") !== null) {
 }
 
 /* Reset food list */
-var resetlist;
+var resetlist, conf;
 addListener(resetfood, "click", resetlist);
 
 function resetlist() {
-    localStorage.removeItem("day");
-    window.location.assign("view.html");
+    conf = confirm("Please confirm to reset food list.");
+    if (conf === true) {
+        localStorage.removeItem("day");
+        location.reload();
+    }
 }
 
 /* Reset app */
@@ -64,6 +68,9 @@ var resetapp;
 addListener(reset, "click", resetapp);
 
 function resetapp() {
-    localStorage.clear();
-    window.location.assign("index.html");
+    conf = confirm("Please confirm to reset app.");
+    if (conf === true) {
+        localStorage.clear();
+        location.reload();
+    }
 }
