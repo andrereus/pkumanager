@@ -10,3 +10,12 @@ if (localStorage.getItem("day") !== null) {
     var date = new Date(list[i].date);
     console.log(addZero(date.getHours()) + ":" + addZero(date.getMinutes()));
 }
+
+--
+
+list.sort(function(a, b){
+    var adate = new Date(a.date);
+    var bdate = new Date(b.date);
+
+    return adate - bdate;
+});
