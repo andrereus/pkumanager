@@ -28,22 +28,26 @@
             <div>
                 <h1 class="float-left" id="logo"><a href="index.html"><img src="img/logo.png" alt="PKU Manager"></a></h1>
                 <nav class="float-right">
-                    <a href="search.html"><span class="fa fa-search"></span></a>
-                    <a href="add.html"><span class="fa fa-plus"></span></a>
-                    <a href="view.html"><span class="fa fa-book"></span></a>
                     <a href="menu.html"><span class="fa fa-bars"></span></a>
                 </nav>
             </div>
         </header>
 
         <section>
-            <h2>PKU Manager - As easy as 123.</h2>
-            <ol>
-                <li><a href="search.html"><span class="fa fa-search"></span> <span class="bold">Search</span></a> for food.</li>
-                <li>Calculate and <a href="add.html"><span class="fa fa-plus"></span> <span class="bold">Add</span></a> food to a list.</li>
-                <li><a href="view.html"><span class="fa fa-book"></span> <span class="bold">View</span></a> and edit food in the list.</li>
-            </ol>
-                <p>More features are added over time.</p>
+            <form action="get" id="site_search" autocomplete="off">
+                <label for="search_box" class="visuallyhidden">Search</label>
+                <input type="text" id="search_box" autofocus>
+                <input type="submit" value="Search">
+            </form>
         </section>
+
+        <section id="view"></section>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/vendor/lunr.min.js"></script>
+
+        <script src="js/search.js"></script>
+        <script src="js/view.js"></script>
     </body>
 </html>

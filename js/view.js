@@ -1,5 +1,13 @@
 /* Initialize */
-var today = document.getElementById("today");
+var view = document.getElementById("view");
+
+function addListener(element, event, funct) {
+    if (element.addEventListener) {
+        return element.addEventListener(event, funct);
+    } else if (element.attachEvent) {
+        return element.attachEvent(event, funct);
+    }
+}
 
 /* Food list */
 if (localStorage.getItem("day") !== null) {
@@ -8,7 +16,8 @@ if (localStorage.getItem("day") !== null) {
     var prot = 0;
     var kcal = 0;
 
-    var table = "<thead><tr><th>" +
+    var table = "<h1>Food entries <a class=\"button float-right\" href=\"add.html\">Add</a></h1>" +
+        "<table><thead><tr><th>" +
         "Description</th><th>" +
         "Phenyl&shy;alanine</th><th>" +
         "Protein</th><th>" +
@@ -46,11 +55,25 @@ if (localStorage.getItem("day") !== null) {
             kcaltol.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
     }
 
-    table += "</tbody><br><p>" +
-        "Reset food list under <a href=\"settings.html\">Settings</a>.</p>";
+    table += "</tbody></table><br>" +
+        "<button class=\"button button-outline resetfood\" id=\"resetfood\">Reset</button>";
 
-    today.innerHTML = table;
+    view.innerHTML = table;
 } else {
-    var empty = "<tbody><tr><td><a href=\"add.html\">Add food</a> to see it here.</td></tr></tbody>";
-    today.innerHTML = empty;
+    var empty = "<h1>Food entries <a class=\"button float-right\" href=\"add.html\">Add</a></h1>" +
+    "<table><tbody><tr><td>No food added.</td></tr></tbody></table>";
+    view.innerHTML = empty;
 }
+
+/* Reset food list */
+var conf;
+
+document.getElementById("view").addEventListener("click", function(event) {
+    if (event.target && event.target.matches("#resetfood")) {
+        conf = confirm("Please confirm to reset food list.");
+        if (conf === true) {
+            localStorage.removeItem("day");
+            location.reload();
+        }
+    }
+});

@@ -30,47 +30,43 @@ jQuery(function() {
     });
 
     function display_search_results(results) {
-        var $search_results = $("#search_results");
+        var $view = $("#view");
 
         // Wait for data to load
         window.data.then(function(loaded_data) {
 
             // Are there any results?
             if (results.length) {
-                $search_results.empty(); // Clear any old results
+                $view.empty(); // Clear any old results
 
                 // Build a snippet of HTML for this result
-                var appendHeader = '<thead><tr><th>' +
+                var table = '<h1>Search results</h1>' +
+                    '<table><thead><tr><th>' +
                     'Description</th><th>' +
                     'Phenyl&shy;alanine per 100&nbsp;g</th><th>' +
                     'Protein per 100&nbsp;g</th><th>' +
                     'Energy per 100&nbsp;g</th></tr></thead><tbody>';
-
-                // Add it to the results
-                $search_results.append(appendHeader);
 
                 // Iterate over the results
                 results.forEach(function(result) {
                     var item = loaded_data[result.ref];
 
                     // Build a snippet of HTML for this result
-                    var appendBody = '<tr><td><a href="add.html?' + item.ndbno + '" class="table-link">' +
+                    table += '<tr><td><a href="add.html?' + item.ndbno + '" class="table-link">' +
                         item.desc + '</a></td><td class="nowrap">' +
                         (item.phe*1000).toFixed(2).replace(/\.?0+$/, "") + ' mg</td><td class="nowrap">' +
                         item.prot.toFixed(2).replace(/\.?0+$/, "") + ' g</td><td>' +
                         item.kcal.toFixed(2).replace(/\.?0+$/, "") + ' kcal</td></tr>';
-
-                    // Add it to the results
-                    $search_results.append(appendBody);
                 });
 
                 // Build a snippet of HTML for this result
-                var appendFooter = '</tbody>';
+                table += '</tbody></table>';
 
                 // Add it to the results
-                $search_results.append(appendFooter);
+                $view.append(table);
             } else {
-                $search_results.html('<tbody><tr><td>No results found.</td></tr></tbody>');
+                $view.html('<h1>Search results</h1>' +
+                '<table><tbody><tr><td>No results found.</td></tr></tbody></table>');
             }
         });
     }
