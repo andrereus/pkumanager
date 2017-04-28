@@ -71,7 +71,7 @@ var conf;
 
 document.getElementById("view").addEventListener("click", function(event) {
     if (event.target && event.target.matches("#resetfood")) {
-        conf = confirm("Please confirm to reset food list.");
+        conf = confirm("Please confirm to reset food entries.");
         if (conf === true) {
             localStorage.removeItem("day");
             location.reload();

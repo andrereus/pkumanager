@@ -51,12 +51,12 @@ if (localStorage.getItem("tolerance") !== null) {
     energy.value = tol.kcaltol.toFixed(2).replace(/\.?0+$/, "");
 }
 
-/* Reset food list */
-var resetlist, conf;
-addListener(resetfood, "click", resetlist);
+/* Reset food entries */
+var resetentries, conf;
+addListener(resetfood, "click", resetentries);
 
-function resetlist() {
-    conf = confirm("Please confirm to reset food list.");
+function resetentries() {
+    conf = confirm("Please confirm to reset food entries.");
     if (conf === true) {
         localStorage.removeItem("day");
         location.reload();
