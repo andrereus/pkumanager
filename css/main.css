@@ -647,7 +647,7 @@ h1, h2 {
 
 #logo {
     position: absolute;
-    top: 10px;
+    top: 35px;
 }
 
 nav > a {
@@ -699,6 +699,11 @@ th, td {
 
 .bold {
     font-weight: 700;
+}
+
+.oldversion {
+    background: #e1e1e1;
+    text-align: center;
 }
 
 /* Headway */
