@@ -40,7 +40,7 @@ jQuery(function() {
                 $view.empty(); // Clear any old results
 
                 // Build a snippet of HTML for this result
-                var table = '<h1>Search results</h1>' +
+                var table = '<h1>Search results <a class=\"button button-outline float-right\" href=\"index.html\">Close</a></h1>' +
                     '<table><thead><tr><th>' +
                     'Description</th><th>' +
                     'Phenyl&shy;alanine per 100&nbsp;g</th><th>' +
@@ -66,7 +66,7 @@ jQuery(function() {
                 $view.append(table);
             } else {
                 $view.html('<h1>Search results</h1>' +
-                '<table><tbody><tr><td>No results found.</td></tr></tbody></table>');
+                '<table><tbody><tr><td>No search results.</td></tr></tbody></table>');
             }
         });
     }

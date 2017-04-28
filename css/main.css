@@ -681,8 +681,17 @@ th, td {
     white-space: nowrap;
 }
 
+#search_button {
+    float: right;
+}
+
+#search_div {
+    padding-right: 10px;
+    overflow: hidden;
+}
+
 .add-edit, #search_box {
-    width: 66%;
+    width: 100%;
 }
 
 #site_search {
@@ -717,15 +726,7 @@ th, td {
 @media (max-width: 400px) {}
 
 /* Smaller than phablet (also point when grid becomes active) */
-@media (max-width: 550px) {
-    #search_box {
-        width: 59%;
-    }
-
-    .add-edit {
-        width: 100%;
-    }
-}
+@media (max-width: 550px) {}
 
 /* Smaller than tablet */
 @media (max-width: 750px) {

@@ -56,12 +56,13 @@ if (localStorage.getItem("day") !== null) {
     }
 
     table += "</tbody></table><br>" +
-        "<button class=\"button button-outline resetfood\" id=\"resetfood\">Reset</button>";
+        "<button class=\"button button-outline resetfood\" id=\"resetfood\">Reset</button>" +
+        "<a class=\"button button-clear float-right\" href=\"settings.html\">Settings</a>";
 
     view.innerHTML = table;
 } else {
     var empty = "<h1>Food entries <a class=\"button float-right\" href=\"add.html\">Add</a></h1>" +
-    "<table><tbody><tr><td>No food added.</td></tr></tbody></table>";
+    "<table><tbody><tr><td>No food entries.</td></tr></tbody></table>";
     view.innerHTML = empty;
 }
 
