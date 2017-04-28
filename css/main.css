@@ -628,17 +628,24 @@ h6 {
 }
 
 /* Author's custom styles */
-header > div, section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 10px 5px;
-}
-
 header {
     height: 60px;
     border-bottom: 1px solid #e1e1e1;
     overflow: hidden;
     margin-bottom: 12px;
+}
+
+header > div {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 5px;
+}
+
+section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 5px;
 }
 
 h1, h2 {
@@ -647,7 +654,7 @@ h1, h2 {
 
 #logo {
     position: absolute;
-    top: 35px;
+    top: 10px;
 }
 
 nav > a {
