@@ -65,7 +65,7 @@ jQuery(function() {
                 // Add it to the results
                 $view.append(table);
             } else {
-                $view.html('<h1>Search results</h1>' +
+                $view.html('<h1>Search results <a class=\"button button-outline float-right\" href=\"index.html\">Close</a></h1>' +
                 '<table><tbody><tr><td>No search results.</td></tr></tbody></table>');
             }
         });
