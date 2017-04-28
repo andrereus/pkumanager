@@ -40,7 +40,7 @@ jQuery(function() {
                 $view.empty(); // Clear any old results
 
                 // Build a snippet of HTML for this result
-                var table = '<h1>Search results <a class=\"button button-outline float-right\" href=\"index.html\">Close</a></h1>' +
+                var table = '<h1>Search results <a class=\"button button-clear float-right\" href=\"index.html\">Close</a></h1>' +
                     '<table><thead><tr><th>' +
                     'Description</th><th>' +
                     'Phenyl&shy;alanine per 100&nbsp;g</th><th>' +
@@ -65,7 +65,7 @@ jQuery(function() {
                 // Add it to the results
                 $view.append(table);
             } else {
-                $view.html('<h1>Search results <a class=\"button button-outline float-right\" href=\"index.html\">Close</a></h1>' +
+                $view.html('<h1>Search results <a class=\"button button-clear float-right\" href=\"index.html\">Close</a></h1>' +
                 '<table><tbody><tr><td>No search results.</td></tr></tbody></table>');
             }
         });
