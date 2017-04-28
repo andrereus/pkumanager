@@ -27,7 +27,7 @@ function tolerance() {
 
     localStorage.setItem("tolerance", JSON.stringify(need));
     alert("Entries are saved.");
-    location.reload();
+    window.location.assign("index.html");
 }
 
 /* Estimate protein */
@@ -59,7 +59,7 @@ function resetentries() {
     conf = confirm("Please confirm to reset food entries.");
     if (conf === true) {
         localStorage.removeItem("day");
-        location.reload();
+        window.location.assign("index.html");
     }
 }
 
@@ -71,6 +71,6 @@ function resetapp() {
     conf = confirm("Please confirm to reset app.");
     if (conf === true) {
         localStorage.clear();
-        location.reload();
+        window.location.assign("index.html");
     }
 }
