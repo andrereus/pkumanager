@@ -16,7 +16,9 @@ if (localStorage.getItem("day") !== null) {
     var prot = 0;
     var kcal = 0;
 
-    var table = "<h1>Food entries <a class=\"button float-right\" href=\"add.html\">Add</a></h1>" +
+    var table = "<h1>Food entries</h1>" +
+        "<a class=\"button right-button\" href=\"add.html\">Add</a>" +
+        "<div class=\"width-wrapper\"><input type=\"text\" class=\"wide-input\" id=\"datepicker\"></div>" +
         "<table><thead><tr><th>" +
         "Description</th><th>" +
         "Phenyl&shy;alanine</th><th>" +
@@ -24,16 +26,22 @@ if (localStorage.getItem("day") !== null) {
         "Energy</th></tr></thead><tbody>";
 
     for (var i = 0; i < list.length; i++) {
-        table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
-            list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
-            list[i].desc + "</a></td><td class=\"nowrap\">" +
-            list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
-            list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
-            list[i].kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+        // var date1 = new Date(list[i].date);
+        // var date2 = $("#datepicker").datepicker("getDate");
+        // var date2 = new Date(document.getElementById("datepicker").value);
 
-        phe += list[i].phe;
-        prot += list[i].prot;
-        kcal += list[i].kcal;
+        // if (date1.getDate() == date2.getDate()) {
+            table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
+                list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
+                list[i].desc + "</a></td><td class=\"nowrap\">" +
+                list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
+                list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
+                list[i].kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+
+            phe += list[i].phe;
+            prot += list[i].prot;
+            kcal += list[i].kcal;
+        // }
     }
 
     table += "<tr><td>" +
@@ -61,7 +69,9 @@ if (localStorage.getItem("day") !== null) {
 
     view.innerHTML = table;
 } else {
-    var empty = "<h1>Food entries <a class=\"button float-right\" href=\"add.html\">Add</a></h1>" +
+    var empty = "<h1>Food entries</h1>" +
+    "<a class=\"button right-button\" href=\"add.html\">Add</a>" +
+    "<div class=\"width-wrapper\"><input type=\"text\" class=\"wide-input\" id=\"datepicker\"></div>" +
     "<table><tbody><tr><td>No food entries.</td></tr></tbody></table>";
     view.innerHTML = empty;
 }
@@ -78,3 +88,10 @@ document.getElementById("view").addEventListener("click", function(event) {
         }
     }
 });
+
+/* Datepicker */
+if ($("#datepicker")) {
+    $("#datepicker").datepicker();
+    $("#datepicker").datepicker("option", "dateFormat", "dd.mm.yy");
+    $("#datepicker").datepicker("setDate", new Date());
+}

@@ -688,16 +688,16 @@ th, td {
     white-space: nowrap;
 }
 
-#search_button {
+.right-button {
     float: right;
 }
 
-#search_div {
+.width-wrapper {
     padding-right: 10px;
     overflow: hidden;
 }
 
-.add-edit, #search_box {
+.add-edit, .wide-input {
     width: 100%;
 }
 

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
         <link rel="stylesheet" href="icons/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <!--[if lt IE 9]>
@@ -36,9 +37,9 @@
         <section>
             <form action="get" id="site_search" autocomplete="off">
                 <label for="search_box" class="visuallyhidden">Search</label>
-                <input type="submit" value="Search" id="search_button">
-                <div id="search_div">
-                    <input type="text" id="search_box" autofocus>
+                <input type="submit" value="Search" class="right-button">
+                <div class="width-wrapper">
+                    <input type="text" class="wide-input" id="search_box" autofocus>
                 </div>
             </form>
         </section>
@@ -48,6 +49,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/vendor/lunr.min.js"></script>
+        <script src="js/vendor/jquery-ui.min.js"></script>
 
         <script src="js/search.js"></script>
         <script src="js/view.js"></script>
