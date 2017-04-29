@@ -18,56 +18,65 @@ if (localStorage.getItem("day") !== null) {
 
     var table = "<h1>Food entries</h1>" +
         "<a class=\"button right-button\" href=\"add.html\">Add</a>" +
-        "<div class=\"width-wrapper\"><input type=\"text\" class=\"wide-input\" id=\"datepicker\"></div>" +
-        "<table><thead><tr><th>" +
-        "Description</th><th>" +
-        "Phenyl&shy;alanine</th><th>" +
-        "Protein</th><th>" +
-        "Energy</th></tr></thead><tbody>";
-
-    for (var i = 0; i < list.length; i++) {
-        // var date1 = new Date(list[i].date);
-        // var date2 = $("#datepicker").datepicker("getDate");
-        // var date2 = new Date(document.getElementById("datepicker").value);
-
-        // if (date1.getDate() == date2.getDate()) {
-            table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
-                list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
-                list[i].desc + "</a></td><td class=\"nowrap\">" +
-                list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
-                list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
-                list[i].kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
-
-            phe += list[i].phe;
-            prot += list[i].prot;
-            kcal += list[i].kcal;
-        // }
-    }
-
-    table += "<tr><td>" +
-        "Total</td><td class=\"nowrap\">" +
-        phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
-        prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
-        kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
-
-    if (localStorage.getItem("tolerance") !== null) {
-        var tolerance = JSON.parse(localStorage.getItem("tolerance"));
-        var phetol = tolerance.phetol - phe;
-        var prottol = tolerance.prottol - prot;
-        var kcaltol = tolerance.kcaltol - kcal;
-
-        table += "<tr><td>" +
-            "Remaining</td><td class=\"nowrap\">" +
-            phetol.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
-            prottol.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
-            kcaltol.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
-    }
-
-    table += "</tbody></table><br>" +
-        "<button class=\"button button-outline resetfood\" id=\"resetfood\">Reset</button>" +
-        "<a class=\"button button-clear float-right\" href=\"settings.html\">Settings</a>";
+        "<div class=\"width-wrapper\"><input type=\"text\" class=\"wide-input\" id=\"datepicker\"></div>";
 
     view.innerHTML = table;
+    $("#datepicker").datepicker();
+    $("#datepicker").datepicker("option", "dateFormat", "dd.mm.yy");
+    $("#datepicker").datepicker("setDate", new Date());
+
+    // function renderEntries() {
+        table += "<table><thead><tr><th>" +
+            "Description</th><th>" +
+            "Phenyl&shy;alanine</th><th>" +
+            "Protein</th><th>" +
+            "Energy</th></tr></thead><tbody>";
+
+        for (var i = 0; i < list.length; i++) {
+            var date1 = new Date(list[i].date);
+            // Rewrite in JavaScript
+            var date2 = $("#datepicker").datepicker("getDate");
+
+            if (date1.getDate() == date2.getDate()) {
+                table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
+                    list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
+                    list[i].desc + "</a></td><td class=\"nowrap\">" +
+                    list[i].phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
+                    list[i].prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
+                    list[i].kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+
+                phe += list[i].phe;
+                prot += list[i].prot;
+                kcal += list[i].kcal;
+            }
+        }
+
+        table += "<tr><td>" +
+            "Total</td><td class=\"nowrap\">" +
+            phe.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
+            prot.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
+            kcal.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+
+        if (localStorage.getItem("tolerance") !== null) {
+            var tolerance = JSON.parse(localStorage.getItem("tolerance"));
+            var phetol = tolerance.phetol - phe;
+            var prottol = tolerance.prottol - prot;
+            var kcaltol = tolerance.kcaltol - kcal;
+
+            table += "<tr><td>" +
+                "Remaining</td><td class=\"nowrap\">" +
+                phetol.toFixed(2).replace(/\.?0+$/, "") + " mg</td><td class=\"nowrap\">" +
+                prottol.toFixed(2).replace(/\.?0+$/, "") + " g</td><td>" +
+                kcaltol.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
+        }
+
+        table += "</tbody></table><br>" +
+            "<button class=\"button button-outline resetfood\" id=\"resetfood\">Reset</button>" +
+            "<a class=\"button button-clear float-right\" href=\"settings.html\">Settings</a>";
+
+        view.innerHTML = table;
+    // }
+    // renderEntries();
 } else {
     var empty = "<h1>Food entries</h1>" +
     "<a class=\"button right-button\" href=\"add.html\">Add</a>" +
@@ -90,8 +99,15 @@ document.getElementById("view").addEventListener("click", function(event) {
 });
 
 /* Datepicker */
+// Rewrite in JavaScript
 if ($("#datepicker")) {
     $("#datepicker").datepicker();
     $("#datepicker").datepicker("option", "dateFormat", "dd.mm.yy");
     $("#datepicker").datepicker("setDate", new Date());
 }
+
+// $("#datepicker").datepicker({
+//     onSelect: function() {
+//         renderEntries();
+//     }
+// });
