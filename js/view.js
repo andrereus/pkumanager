@@ -15,9 +15,8 @@ $("#datepicker").datepicker("setDate", new Date());
 
 /* Food list */
 if (localStorage.getItem("day") !== null) {
-    var list = JSON.parse(localStorage.getItem("day"));
-
     function renderEntries() {
+        var list = JSON.parse(localStorage.getItem("day"));
         var phe = 0;
         var prot = 0;
         var kcal = 0;
