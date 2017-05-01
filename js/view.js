@@ -5,9 +5,8 @@ var entry = document.getElementById("entry");
 var view = document.getElementById("view");
 
 /* Food navigation */
-var nav = "<h1>Food entries</h1>" +
-    "<a class=\"button right-button\" href=\"add.html\">Add</a>" +
-    "<div class=\"width-wrapper\"><input type=\"text\" class=\"wide-input\" id=\"datepicker\"></div>";
+var nav = "<input type=\"text\" class=\"float-left\" id=\"datepicker\">" +
+    "<a class=\"button float-right\" href=\"add.html\">Add</a>";
 
 entry.innerHTML = nav;
 $("#datepicker").datepicker();
@@ -76,10 +75,7 @@ if (localStorage.getItem("day") !== null) {
                 kcaltol.toFixed(2).replace(/\.?0+$/, "") + " kcal</td></tr>";
         }
 
-        table += "</tbody></table><br>" +
-            "<button class=\"button button-outline resetfood\" id=\"resetfood\">Reset</button>" +
-            "<a class=\"button button-clear float-right\" href=\"settings.html\">Settings</a>";
-
+        table += "</tbody></table>";
         view.innerHTML = table;
     }
 
@@ -90,32 +86,32 @@ if (localStorage.getItem("day") !== null) {
 }
 
 /* Reset food list */
-var conf, dropId;
+// var conf, dropId;
 
-document.getElementById("view").addEventListener("click", function(event) {
-    if (event.target && event.target.matches("#resetfood")) {
-        conf = confirm("Please confirm to reset food entries.");
+// document.getElementById("view").addEventListener("click", function(event) {
+//     if (event.target && event.target.matches("#resetfood")) {
+//         conf = confirm("Please confirm to reset food entries.");
 
-        if (conf === true) {
-            var pickeddate = $("#datepicker").datepicker("getDate");
+//         if (conf === true) {
+//             var pickeddate = $("#datepicker").datepicker("getDate");
 
-            for (var i = 0; i < list.length; i++) {
-                var fooddate = new Date(list[i].date);
+//             for (var i = 0; i < list.length; i++) {
+//                 var fooddate = new Date(list[i].date);
 
-                if (fooddate.getDate() == pickeddate.getDate()) {
-                    list.splice(i, 1);
-                    localStorage.setItem("day", JSON.stringify(list));
-                }
-            }
+//                 if (fooddate.getDate() == pickeddate.getDate()) {
+//                     list.splice(i, 1);
+//                     localStorage.setItem("day", JSON.stringify(list));
+//                 }
+//             }
 
-            if (list.length < 1) {
-                localStorage.removeItem("day");
-            }
+//             if (list.length < 1) {
+//                 localStorage.removeItem("day");
+//             }
 
-            location.reload();
-        }
-    }
-});
+//             location.reload();
+//         }
+//     }
+// });
 
 /* Datepicker */
 $("#datepicker").datepicker({

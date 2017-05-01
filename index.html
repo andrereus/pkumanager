@@ -30,19 +30,22 @@
                 <h1 class="float-left" id="logo"><a href="index.html"><img src="img/logo.png" alt="PKU Manager"></a></h1>
                 <nav class="float-right">
                     <a href="about.html"><span class="fa fa-info-circle"></span></a>
+                    <a href="settings.html"><span class="fa fa-cog"></span></a>
                 </nav>
             </div>
         </header>
 
-        <section>
-            <form action="get" id="site_search" autocomplete="off">
-                <label for="search_box" class="visuallyhidden">Search</label>
-                <input type="submit" value="Search" class="right-button">
-                <div class="width-wrapper">
-                    <input type="text" class="wide-input" id="search_box" autofocus>
-                </div>
-            </form>
-        </section>
+        <div id="search">
+            <section>
+                <form action="get" id="site_search" autocomplete="off">
+                    <label for="search_box" class="visuallyhidden">Search</label>
+                    <input type="submit" value="Search" class="right-button">
+                    <div class="width-wrapper">
+                        <input type="text" class="wide-input" id="search_box" autofocus>
+                    </div>
+                </form>
+            </section>
+        </div>
 
         <section id="entry"></section>
         <section id="view"></section>

@@ -632,7 +632,6 @@ header {
     height: 60px;
     border-bottom: 1px solid #e1e1e1;
     overflow: hidden;
-    margin-bottom: 12px;
 }
 
 header > div {
@@ -640,6 +639,10 @@ header > div {
     max-width: 960px;
     margin: 0 auto;
     padding: 10px 5px;
+}
+
+.site {
+    margin-bottom: 15px;
 }
 
 section {
@@ -722,11 +725,18 @@ th, td {
     text-align: center;
 }
 
-/* Headway */
-#HW_badge_cont {
-    position: absolute !important;
-    top: 4px;
-    margin-left: 35px;
+#search {
+    background-image: url("../img/food.jpg");
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+#search_box {
+    background: #fff;
+}
+
+#datepicker {
+    width: 100px;
 }
 
 /* Smaller than mobile */
