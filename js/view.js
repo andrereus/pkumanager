@@ -32,6 +32,7 @@ if (localStorage.getItem("day") !== null) {
         for (var i = 0; i < list.length; i++) {
             var fooddate = new Date(list[i].date);
 
+            // Vergleicht bis jetzt nur einzelnen Tag!
             if (fooddate.getDate() == pickeddate.getDate()) {
                 table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
                     list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
@@ -43,15 +44,6 @@ if (localStorage.getItem("day") !== null) {
                 phe += list[i].phe;
                 prot += list[i].prot;
                 kcal += list[i].kcal;
-            } else {
-                table += "<tr><td>" +
-                    "0&nbsp;g " +
-                    "Food</td><td class=\"nowrap\">" +
-                    "0 mg</td><td class=\"nowrap\">" +
-                    "0 g</td><td>" +
-                    "0 kcal</td></tr>";
-
-                break;
             }
         }
 
