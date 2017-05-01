@@ -1,4 +1,5 @@
-// Rewrite in JavaScript
+/* TODO: Rewrite in JavaScript! */
+
 jQuery(function() {
     // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
@@ -31,6 +32,7 @@ jQuery(function() {
     });
 
     function display_search_results(results) {
+        $("#entry").remove(); // Remove food navigation
         var $view = $("#view");
 
         // Wait for data to load
