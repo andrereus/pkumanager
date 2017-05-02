@@ -739,6 +739,10 @@ th, td {
     width: 100px;
 }
 
+#navi {
+    padding-bottom: 40px;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {}
 

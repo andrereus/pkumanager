@@ -28,10 +28,7 @@
         <header>
             <div>
                 <h1 class="float-left" id="logo"><a href="index.html"><img src="img/logo.png" alt="PKU Manager"></a></h1>
-                <nav class="float-right">
-                    <a href="about.html"><span class="fa fa-info-circle"></span></a>
-                    <a href="settings.html"><span class="fa fa-cog"></span></a>
-                </nav>
+                <img src="img/btn_google_signin_light_normal_web.png" class="float-right">
             </div>
         </header>
 
@@ -49,6 +46,25 @@
 
         <section id="entry"></section>
         <section id="view"></section>
+
+        <section id="navi">
+            <a href="about.html"><span class="fa fa-info-circle"></span> About</a>
+            <a href="settings.html" class="float-right"><span class="fa fa-cog"></span> Settings</a>
+        </section>
+
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB5sIDzR9607vh_rbcKm0mX0tClBVHMVzM",
+            authDomain: "pkumanager-89110.firebaseapp.com",
+            databaseURL: "https://pkumanager-89110.firebaseio.com",
+            projectId: "pkumanager-89110",
+            storageBucket: "pkumanager-89110.appspot.com",
+            messagingSenderId: "704909280763"
+        };
+        firebase.initializeApp(config);
+        </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
