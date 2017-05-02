@@ -29,6 +29,7 @@ addListener(add, "click", save);
 
 function save() {
     var day, id;
+    var stamp = new Date();
 
     if (localStorage.getItem("day") !== null) {
         day = JSON.parse(localStorage.getItem("day"));
@@ -40,7 +41,7 @@ function save() {
 
     var food = {
         "id": id,
-        "date": new Date(),
+        "date": stamp.getTime(),
         "desc": description.value,
         "wg": Number(weight.value),
         "phe": Number(phenylalanine.value),
@@ -48,9 +49,18 @@ function save() {
         "kcal": Number(energy.value)
     };
 
-    day.push(food);
-    localStorage.setItem("day", JSON.stringify(day));
-    window.location.assign("index.html");
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            firebase.database().ref(user.uid).push(food);
+            alert("Saved.");
+        } else {
+            day.push(food);
+            localStorage.setItem("day", JSON.stringify(day));
+            alert("Saved.");
+        }
+    });
+
+    // window.location.assign("index.html");
 }
 
 /* Calculate */
