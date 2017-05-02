@@ -7,10 +7,30 @@
         <meta name="description" content="PKU Manager | Add">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Material Design Theming -->
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
         <link rel="stylesheet" href="icons/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB5sIDzR9607vh_rbcKm0mX0tClBVHMVzM",
+            authDomain: "pkumanager-89110.firebaseapp.com",
+            databaseURL: "https://pkumanager-89110.firebaseio.com",
+            projectId: "pkumanager-89110",
+            storageBucket: "pkumanager-89110.appspot.com",
+            messagingSenderId: "704909280763"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <script src="js/login.js"></script>
 
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,10 +47,7 @@
         <header class="site">
             <div>
                 <h1 class="float-left" id="logo"><a href="index.html"><img src="img/logo.png" alt="PKU Manager"></a></h1>
-                <nav class="float-right">
-                    <a href="about.html"><span class="fa fa-info-circle"></span></a>
-                    <a href="settings.html"><span class="fa fa-cog"></span></a>
-                </nav>
+                <button disabled class="mdl-button mdl-js-button mdl-button--raised float-right" id="quickstart-sign-in">Sign in with Google</button>
             </div>
         </header>
 
@@ -56,19 +73,10 @@
             </form>
         </section>
 
-        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-        <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyB5sIDzR9607vh_rbcKm0mX0tClBVHMVzM",
-            authDomain: "pkumanager-89110.firebaseapp.com",
-            databaseURL: "https://pkumanager-89110.firebaseio.com",
-            projectId: "pkumanager-89110",
-            storageBucket: "pkumanager-89110.appspot.com",
-            messagingSenderId: "704909280763"
-        };
-        firebase.initializeApp(config);
-        </script>
+        <section id="navi">
+            <a href="about.html"><span class="fa fa-info-circle"></span> About</a>
+            <a href="settings.html" class="float-right"><span class="fa fa-cog"></span> Settings</a>
+        </section>
 
         <script src="js/add.js"></script>
     </body>
