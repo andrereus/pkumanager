@@ -1,4 +1,4 @@
-/* TODO: Structure code. */
+/* TODO: Structure code */
 
 /* Initialize */
 var entry = document.getElementById("entry");
@@ -30,7 +30,7 @@ function renderEntries(list) {
     for (var i = 0; i < list.length; i++) {
         var fooddate = new Date(list[i].date);
 
-        // Vergleicht bis jetzt nur einzelnen Tag!
+        // TODO: Vergleicht bis jetzt nur einzelnen Tag
         if (fooddate.getDate() == pickeddate.getDate()) {
             table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
                 list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
@@ -74,7 +74,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         firebase.database().ref(user.uid).on("child_added", function(ulist) {
             list.push(ulist.val());
             renderEntries(list);
-            // TODO: Loop Verhalten.
+            // TODO: Loop Verhalten
         });
     } else {
         if (localStorage.getItem("day") !== null) {
@@ -122,7 +122,7 @@ $("#datepicker").datepicker({
     }
 });
 
-// DRY!
+// TODO: DRY
 $("#datepicker").change(function(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -130,7 +130,7 @@ $("#datepicker").change(function(){
             firebase.database().ref(user.uid).on("child_added", function(ulist) {
                 list.push(ulist.val());
                 renderEntries(list);
-                // TODO: Loop Verhalten.
+                // TODO: Loop Verhalten
             });
         } else {
             if (localStorage.getItem("day") !== null) {
