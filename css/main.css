@@ -743,6 +743,10 @@ th, td {
     padding-bottom: 40px;
 }
 
+.mdl-button:hover {
+    color: #000;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {}
 
