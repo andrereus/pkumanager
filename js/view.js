@@ -70,9 +70,11 @@ function renderEntries(list) {
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        var ulist = firebase.database().ref(user.uid).on("child_added", function(list) {
-            var list = [list.val()]; // Save data
+        var list = [];
+        firebase.database().ref(user.uid).on("child_added", function(ulist) {
+            list.push(ulist.val());
             renderEntries(list);
+            // TODO: Loop Verhalten.
         });
     } else {
         if (localStorage.getItem("day") !== null) {
@@ -124,9 +126,11 @@ $("#datepicker").datepicker({
 $("#datepicker").change(function(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            var ulist = firebase.database().ref(user.uid).on("child_added", function(list) {
-                var list = [list.val()]; // Save data
+            var list = [];
+            firebase.database().ref(user.uid).on("child_added", function(ulist) {
+                list.push(ulist.val());
                 renderEntries(list);
+                // TODO: Loop Verhalten.
             });
         } else {
             if (localStorage.getItem("day") !== null) {
