@@ -1,4 +1,6 @@
-/* TODO: Rewrite in JavaScript */
+// TODO:
+// - Rewrite in JavaScript
+// - Update lunr.js
 
 jQuery(function() {
     // Initalize lunr with the fields it will be searching on. I've given title

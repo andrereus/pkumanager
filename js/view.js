@@ -1,4 +1,6 @@
-/* TODO: Structure code */
+// TODO:
+// - Restructure code
+// - See comments for more
 
 /* Initialize */
 var entry = document.getElementById("entry");
@@ -30,7 +32,7 @@ function renderEntries(list) {
     for (var i = 0; i < list.length; i++) {
         var fooddate = new Date(list[i].date);
 
-        // TODO: Vergleicht bis jetzt nur einzelnen Tag
+        // TODO: Add month and year
         if (fooddate.getDate() == pickeddate.getDate()) {
             table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
                 list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
@@ -74,7 +76,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         firebase.database().ref(user.uid).on("child_added", function(ulist) {
             list.push(ulist.val());
             renderEntries(list);
-            // TODO: Loop Verhalten
+            // TODO: Loop behavior
         });
     } else {
         if (localStorage.getItem("day") !== null) {
@@ -130,7 +132,7 @@ $("#datepicker").change(function(){
             firebase.database().ref(user.uid).on("child_added", function(ulist) {
                 list.push(ulist.val());
                 renderEntries(list);
-                // TODO: Loop Verhalten
+                // TODO: Loop behavior
             });
         } else {
             if (localStorage.getItem("day") !== null) {
