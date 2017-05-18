@@ -629,7 +629,7 @@ h6 {
 
 /* Author's custom styles */
 header {
-    height: 60px;
+    height: 65px;
     border-bottom: 1px solid #e1e1e1;
     overflow: hidden;
 }
@@ -657,7 +657,7 @@ h1, h2 {
 
 #logo {
     position: absolute;
-    top: 10px;
+    top: 15px;
 }
 
 nav > a {
@@ -745,6 +745,10 @@ th, td {
 
 .mdl-button:hover {
     color: #000;
+}
+
+.disabled {
+    color: #e1e1e1;
 }
 
 /* Smaller than mobile */
