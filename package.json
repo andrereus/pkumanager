@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "PKU Manager",
   "scripts": {
-    "serve": "browser-sync start --server --files \"**/*\"",
+    "serve": "browser-sync start --server --files \"**/*\""
   },
   "repository": {
     "type": "git",
