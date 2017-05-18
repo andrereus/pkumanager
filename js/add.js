@@ -51,16 +51,15 @@ function save() {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            firebase.database().ref(user.uid).push(food);
-            alert("Saved.");
+            firebase.database().ref(user.uid).push(food, function(error){
+                window.location.assign("index.html");
+            });
         } else {
             day.push(food);
             localStorage.setItem("day", JSON.stringify(day));
-            alert("Saved.");
+            window.location.assign("index.html");
         }
     });
-
-    // window.location.assign("index.html");
 }
 
 /* Calculate */

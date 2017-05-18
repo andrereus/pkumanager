@@ -1,7 +1,3 @@
-// TODO:
-// - Restructure code
-// - See comments for more
-
 /* Initialize */
 var entry = document.getElementById("entry");
 var view = document.getElementById("view");
@@ -32,8 +28,7 @@ function renderEntries(list) {
     for (var i = 0; i < list.length; i++) {
         var fooddate = new Date(list[i].date);
 
-        // TODO: Add month and year
-        if (fooddate.getDate() == pickeddate.getDate()) {
+        if (fooddate.getDate() == pickeddate.getDate() && fooddate.getMonth() == pickeddate.getMonth() && fooddate.getFullYear() == pickeddate.getFullYear()) {
             table += "<tr><td><a href=\"edit.html?" + list[i].id + "\" class=\"table-link\">" +
                 list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
                 list[i].desc + "</a></td><td class=\"nowrap\">" +
@@ -88,34 +83,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
     }
 });
-
-/* Reset food list */
-// var conf, dropId;
-
-// document.getElementById("view").addEventListener("click", function(event) {
-//     if (event.target && event.target.matches("#resetfood")) {
-//         conf = confirm("Please confirm to reset food entries.");
-
-//         if (conf === true) {
-//             var pickeddate = $("#datepicker").datepicker("getDate");
-
-//             for (var i = 0; i < list.length; i++) {
-//                 var fooddate = new Date(list[i].date);
-
-//                 if (fooddate.getDate() == pickeddate.getDate()) {
-//                     list.splice(i, 1);
-//                     localStorage.setItem("day", JSON.stringify(list));
-//                 }
-//             }
-
-//             if (list.length < 1) {
-//                 localStorage.removeItem("day");
-//             }
-
-//             location.reload();
-//         }
-//     }
-// });
 
 /* Datepicker */
 $("#datepicker").datepicker({
