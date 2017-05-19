@@ -691,10 +691,6 @@ th, td {
     white-space: nowrap;
 }
 
-.right-button {
-    float: right;
-}
-
 .width-wrapper {
     padding-right: 10px;
     overflow: hidden;
@@ -733,6 +729,11 @@ th, td {
 
 #search_box {
     background: #fff;
+}
+
+#language {
+    background: #fff;
+    width: 80px;
 }
 
 #datepicker {
