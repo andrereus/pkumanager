@@ -9,7 +9,7 @@ function toggleSignIn() {
         firebase.auth().signOut();
     }
 
-    document.getElementById('quickstart-sign-in').classList.add('disabled');
+    document.getElementById('sign-in').classList.add('disabled');
 }
 
 /**
@@ -51,18 +51,18 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            document.getElementById('storage-username').innerHTML = '<span class="fa fa-user"></span> '+ user.displayName;
-            document.getElementById('quickstart-sign-in').innerHTML = '<span class="fa fa-sign-out"></span> Sign out';
+            document.getElementById('storage').innerHTML = '<span class="fa fa-user"></span> '+ user.displayName +' <span class="fa fa-caret-down">';
+            document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-out"></span> Sign out';
         } else {
             // User is signed out.
-            document.getElementById('storage-username').innerHTML = '<span class="fa fa-database"></span> Browser storage mode';
-            document.getElementById('quickstart-sign-in').innerHTML = '<span class="fa fa-sign-in"></span> Sign in with Google';
+            document.getElementById('storage').innerHTML = '<span class="fa fa-database"></span> Browser storage <span class="fa fa-caret-down">';
+            document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-in"></span> Sign in with Google';
         }
 
-        document.getElementById('quickstart-sign-in').classList.remove('disabled');
+        document.getElementById('sign-in').classList.remove('disabled');
     });
 
-    document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+    document.getElementById('sign-in').addEventListener('click', toggleSignIn, false);
 }
 
 window.onload = function() {

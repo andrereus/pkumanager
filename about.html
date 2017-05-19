@@ -49,18 +49,27 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="oldversion">This site is currently under development. You can switch to the latest stable version <a href="old">here</a>.</div>
-
         <header class="site">
             <div>
                 <h1 class="float-left" id="logo"><a href="index.html"><img src="img/logo.png" alt="PKU Manager"></a></h1>
-                <div class="float-right"><span id="storage-username"><span class="fa fa-database"></span> Browser storage mode</span><br>
-                <a href="#" class="disabled" id="quickstart-sign-in"><span class="fa fa-sign-in"></span> Sign in with Google</a></div>
+                <div id="login" class="float-right">
+                    <div id="storage">
+                        <span class="fa fa-database"></span> Browser storage <span class="fa fa-caret-down"></span>
+                    </div>
+                    <div id="dropdown" class="hidden">
+                        <a href="index.html"><span class="fa fa-home"></span> Home</a>
+                        <a href="#" class="disabled" id="sign-in"><span class="fa fa-sign-in"></span> Sign in with Google</a>
+                        <a href="settings.html"><span class="fa fa-cog"></span> Settings</a>
+                        <a href="about.html"><span class="fa fa-info-circle"></span> About</a>
+                        <div id="development">"Sign in" is currently under development.</div>
+                        <a href="old"><span class="fa fa-history"></span> Old version</a>
+                    </div>
+                </div>
             </div>
         </header>
 
         <section>
-            <h1>PKU Manager - As easy as 123. <a class="button button-clear float-right" href="index.html">Close</a></h1>
+            <h1>PKU Manager - As easy as 123.</h1>
             <ol>
                 <li><a href="index.html"><span class="fa fa-search"></span> <span class="bold">Search</span></a> for food.</li>
                 <li>Calculate and <a href="add.html"><span class="fa fa-plus"></span> <span class="bold">Add</span></a> food to a list.</li>
@@ -92,9 +101,9 @@
             <noscript><p>Activate JavaScript to see e-mail.</p></noscript>
         </section>
 
-        <section id="navi">
-            <a href="about.html"><span class="fa fa-info-circle"></span> About</a>
-            <a href="settings.html" class="float-right"><span class="fa fa-cog"></span> Settings</a>
-        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -25,3 +25,15 @@ document.getElementById("view").addEventListener("click", function(event) {
         }
     }
 });
+
+/* Reset food entries */
+var resetentries, conf;
+addListener(resetfood, "click", resetentries);
+
+function resetentries() {
+    conf = confirm("Please confirm to reset food entries.");
+    if (conf === true) {
+        localStorage.removeItem("day");
+        window.location.assign("index.html");
+    }
+}

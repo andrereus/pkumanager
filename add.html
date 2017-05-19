@@ -49,18 +49,28 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="oldversion">This site is currently under development. You can switch to the latest stable version <a href="old">here</a>.</div>
-
         <header class="site">
             <div>
                 <h1 class="float-left" id="logo"><a href="index.html"><img src="img/logo.png" alt="PKU Manager"></a></h1>
-                <div class="float-right"><span id="storage-username"><span class="fa fa-database"></span> Browser storage mode</span><br>
-                <a href="#" class="disabled" id="quickstart-sign-in"><span class="fa fa-sign-in"></span> Sign in with Google</a></div>
+                <div id="login" class="float-right">
+                    <div id="storage">
+                        <span class="fa fa-database"></span> Browser storage <span class="fa fa-caret-down"></span>
+                    </div>
+                    <div id="dropdown" class="hidden">
+                        <a href="index.html"><span class="fa fa-home"></span> Home</a>
+                        <a href="#" class="disabled" id="sign-in"><span class="fa fa-sign-in"></span> Sign in with Google</a>
+                        <a href="settings.html"><span class="fa fa-cog"></span> Settings</a>
+                        <a href="about.html"><span class="fa fa-info-circle"></span> About</a>
+                        <div id="development">"Sign in" is currently under development.</div>
+                        <a href="old"><span class="fa fa-history"></span> Old version</a>
+                    </div>
+                </div>
             </div>
         </header>
 
         <section>
-            <h1>Add <a class="button button-clear float-right" href="index.html">Cancel</a></h1>
+            <h1>Add</h1>
+            <div class="float-right"><input type="checkbox" id="calculate"><label class="label-inline" for="calculate">Lock values</label></div>
             <form class="add-edit" autocomplete="off">
                 <label for="name">Name</label>
                 <input type="text" id="name">
@@ -74,18 +84,13 @@
                 <input type="number" id="energy">
                 <input type="button" value="Save" id="add">
                 <input type="reset" value="Clear" class="button-outline">
-                <div class="float-right">
-                    <input type="checkbox" id="calculate">
-                    <label class="label-inline" for="calculate">Calculate with these values</label>
-                </div>
             </form>
         </section>
 
-        <section id="navi">
-            <a href="about.html"><span class="fa fa-info-circle"></span> About</a>
-            <a href="settings.html" class="float-right"><span class="fa fa-cog"></span> Settings</a>
-        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 
+        <script src="js/main.js"></script>
         <script src="js/add.js"></script>
     </body>
 </html>
