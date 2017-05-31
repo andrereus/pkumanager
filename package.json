@@ -13,6 +13,6 @@
   "bugs": "https://github.com/pkumanager/pkumanager/issues",
   "homepage": "http://pkumanager.com",
   "devDependencies": {
-    "browser-sync": "^2.18.11"
+    "browser-sync": "^2.18.12"
   }
 }
