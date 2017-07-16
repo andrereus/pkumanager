@@ -59,13 +59,13 @@ function resetapp() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             firebase.database().ref(user.uid).once("value").then(function(snapshot) {
-                conf = confirm("Please confirm to reset entries.");
+                conf = confirm("Please confirm to reset app.");
                 firebase.database().ref(user.uid).remove().then(function(error){
                     window.location.assign("index.html");
                 });
             });
         } else {
-            conf = confirm("Please confirm to reset entries.");
+            conf = confirm("Please confirm to reset app.");
             if (conf === true) {
                 localStorage.clear();
                 window.location.assign("index.html");
