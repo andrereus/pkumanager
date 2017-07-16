@@ -71,9 +71,14 @@ function loadData() {
         if (user) {
             var list = [];
             firebase.database().ref(user.uid).on("child_added", function(ulist) {
-                list.push(ulist.val());
-                renderEntries(list);
-                // TODO: Loop behavior
+                if (ulist.val() !== null) {
+                    list.push(ulist.val());
+                    renderEntries(list);
+                    // TODO: Loop behavior
+                } else {
+                    var empty = "<table><tbody><tr><td>No food entries.</td></tr></tbody></table>";
+                    view.innerHTML = empty;
+                }
             });
         } else {
             if (localStorage.getItem("day") !== null) {
