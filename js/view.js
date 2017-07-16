@@ -65,34 +65,8 @@ function renderEntries(list) {
     view.innerHTML = table;
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        var list = [];
-        firebase.database().ref(user.uid).on("child_added", function(ulist) {
-            list.push(ulist.val());
-            renderEntries(list);
-            // TODO: Loop behavior
-        });
-    } else {
-        if (localStorage.getItem("day") !== null) {
-            var list = JSON.parse(localStorage.getItem("day"));
-            renderEntries(list);
-        } else {
-            var empty = "<table><tbody><tr><td>No food entries.</td></tr></tbody></table>";
-            view.innerHTML = empty;
-        }
-    }
-});
-
-/* Datepicker */
-$("#datepicker").datepicker({
-    onSelect: function() {
-        $(this).change();
-    }
-});
-
-// TODO: DRY
-$("#datepicker").change(function(){
+/* Load Data */
+function loadData() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             var list = [];
@@ -111,4 +85,17 @@ $("#datepicker").change(function(){
             }
         }
     });
+}
+
+loadData();
+
+/* Datepicker */
+$("#datepicker").datepicker({
+    onSelect: function() {
+        $(this).change();
+    }
+});
+
+$("#datepicker").change(function(){
+    loadData();
 });
