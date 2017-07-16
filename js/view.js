@@ -65,7 +65,7 @@ function renderEntries(list) {
     view.innerHTML = table;
 }
 
-/* Load Data */
+/* Load data */
 function loadData() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -87,6 +87,7 @@ function loadData() {
     });
 }
 
+/* Initialize data */
 loadData();
 
 /* Datepicker */

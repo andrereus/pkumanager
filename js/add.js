@@ -36,24 +36,26 @@ function save() {
             firebase.database().ref(user.uid).once("value").then(function(snapshot) {
                 if (snapshot.val() !== null) {
                     day = snapshot.val();
-                    id = Object.keys(day).length + 1;
+                    for (var key in day) {
+                        id = day[key].id + 1;
+                    }
                 } else {
                     id = 1;
                 }
-            });
 
-            var food = {
-                "id": id,
-                "date": stamp.getTime(),
-                "desc": description.value,
-                "wg": Number(weight.value),
-                "phe": Number(phenylalanine.value),
-                "prot": Number(protein.value),
-                "kcal": Number(energy.value)
-            };
+                var food = {
+                    "id": id,
+                    "date": stamp.getTime(),
+                    "desc": description.value,
+                    "wg": Number(weight.value),
+                    "phe": Number(phenylalanine.value),
+                    "prot": Number(protein.value),
+                    "kcal": Number(energy.value)
+                };
 
-            firebase.database().ref(user.uid).push(food, function(error){
-                window.location.assign("index.html");
+                firebase.database().ref(user.uid).push(food, function(error){
+                    window.location.assign("index.html");
+                });
             });
         } else {
             if (localStorage.getItem("day") !== null) {

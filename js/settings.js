@@ -56,9 +56,20 @@ var resetapp;
 addListener(reset, "click", resetapp);
 
 function resetapp() {
-    conf = confirm("Please confirm to reset app.");
-    if (conf === true) {
-        localStorage.clear();
-        window.location.assign("index.html");
-    }
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            firebase.database().ref(user.uid).once("value").then(function(snapshot) {
+                conf = confirm("Please confirm to reset app.");
+                firebase.database().ref(user.uid).remove().then(function(error){
+                    window.location.assign("index.html");
+                });
+            });
+        } else {
+            conf = confirm("Please confirm to reset app.");
+            if (conf === true) {
+                localStorage.clear();
+                window.location.assign("index.html");
+            }
+        }
+    });
 }
