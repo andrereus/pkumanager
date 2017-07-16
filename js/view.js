@@ -71,6 +71,7 @@ function loadData() {
         if (user) {
             var list = [];
             firebase.database().ref(user.uid).on("child_added", function(ulist) {
+                // TODO: No child added
                 if (ulist.val() !== null) {
                     list.push(ulist.val());
                     renderEntries(list);
