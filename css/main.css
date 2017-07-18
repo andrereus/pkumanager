@@ -704,11 +704,16 @@ th, td {
     margin-bottom: 0;
 }
 
+#instruction-text {
+    text-align: center;
+}
+
 #instruction {
     border: 1px solid #e1e1e1;
     border-radius: 4px;
     max-width: 750px;
     display: block;
+    margin: 0 auto;
 }
 
 .bold {
