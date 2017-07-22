@@ -713,7 +713,7 @@ th, td {
     border-radius: 4px;
     max-width: 750px;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 25px;
 }
 
 .bold {
@@ -779,6 +779,10 @@ th, td {
     display: block;
     padding: 4px;
     white-space: nowrap;
+}
+
+#help {
+    text-align: center;
 }
 
 /* Smaller than mobile */
