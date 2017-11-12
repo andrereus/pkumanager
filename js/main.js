@@ -1,4 +1,4 @@
 /* Dropdown */
-$("#storage").on("click", function(){
+$("#storage").on("click", function () {
     $("#dropdown").toggleClass("hidden");
 });

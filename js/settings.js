@@ -56,11 +56,11 @@ var resetapp;
 addListener(reset, "click", resetapp);
 
 function resetapp() {
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            firebase.database().ref(user.uid).once("value").then(function(snapshot) {
+            firebase.database().ref(user.uid).once("value").then(function (snapshot) {
                 conf = confirm("Please confirm to reset app.");
-                firebase.database().ref(user.uid).remove().then(function(error){
+                firebase.database().ref(user.uid).remove().then(function (error) {
                     window.location.assign("index.html");
                 });
             });

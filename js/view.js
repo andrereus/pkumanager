@@ -67,10 +67,10 @@ function renderEntries(list) {
 
 /* Load data */
 function loadData() {
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             var list = [];
-            firebase.database().ref(user.uid).on("child_added", function(ulist) {
+            firebase.database().ref(user.uid).on("child_added", function (ulist) {
                 // TODO: No child added
                 if (ulist.val() !== null) {
                     list.push(ulist.val());
@@ -100,11 +100,11 @@ loadData();
 
 /* Datepicker */
 $("#datepicker").datepicker({
-    onSelect: function() {
+    onSelect: function () {
         $(this).change();
     }
 });
 
-$("#datepicker").change(function(){
+$("#datepicker").change(function () {
     loadData();
 });

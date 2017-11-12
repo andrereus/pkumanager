@@ -34,9 +34,9 @@ var save;
 addListener(edit, "click", save);
 
 function save() {
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            firebase.database().ref(user.uid).once("value").then(function(snapshot) {
+            firebase.database().ref(user.uid).once("value").then(function (snapshot) {
                 var list = snapshot.val();
 
                 for (var key in list) {
@@ -49,7 +49,7 @@ function save() {
                     }
                 }
 
-                firebase.database().ref(user.uid).update(list, function(error){
+                firebase.database().ref(user.uid).update(list, function (error) {
                     window.location.assign("index.html");
                 });
             });
@@ -77,14 +77,14 @@ var remove, dropId
 addListener(drop, "click", remove);
 
 function remove() {
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            firebase.database().ref(user.uid).once("value").then(function(snapshot) {
+            firebase.database().ref(user.uid).once("value").then(function (snapshot) {
                 var list = snapshot.val();
 
                 for (var key in list) {
                     if (list[key].id == searchId) {
-                        firebase.database().ref(user.uid).child(key).remove().then(function(error){
+                        firebase.database().ref(user.uid).child(key).remove().then(function (error) {
                             window.location.assign("index.html");
                         });
                     }
@@ -150,9 +150,9 @@ function estimate() {
 }
 
 /* Grab */
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        firebase.database().ref(user.uid).once("value").then(function(snapshot) {
+        firebase.database().ref(user.uid).once("value").then(function (snapshot) {
             var list = snapshot.val();
 
             for (var key in list) {

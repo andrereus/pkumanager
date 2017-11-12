@@ -31,9 +31,9 @@ function save() {
     var day, id;
     var stamp = new Date();
 
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            firebase.database().ref(user.uid).once("value").then(function(snapshot) {
+            firebase.database().ref(user.uid).once("value").then(function (snapshot) {
                 if (snapshot.val() !== null) {
                     day = snapshot.val();
                     for (var key in day) {
@@ -53,7 +53,7 @@ function save() {
                     "kcal": Number(energy.value)
                 };
 
-                firebase.database().ref(user.uid).push(food, function(error){
+                firebase.database().ref(user.uid).push(food, function (error) {
                     window.location.assign("index.html");
                 });
             });
@@ -140,7 +140,7 @@ function grab(list) {
     for (var i = 0; i < list.length; i++) {
         if (list[i].ndbno == searchId) {
             description.value = list[i].desc;
-            phenylalanine.value = (list[i].phe*1000).toFixed(2).replace(/\.?0+$/, "");
+            phenylalanine.value = (list[i].phe * 1000).toFixed(2).replace(/\.?0+$/, "");
             protein.value = list[i].prot.toFixed(2).replace(/\.?0+$/, "");
             energy.value = list[i].kcal.toFixed(2).replace(/\.?0+$/, "");
         }

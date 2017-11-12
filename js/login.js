@@ -21,7 +21,7 @@ function toggleSignIn() {
  */
 function initApp() {
     // Result from Redirect auth flow.
-    firebase.auth().getRedirectResult().then(function(result) {
+    firebase.auth().getRedirectResult().then(function (result) {
         if (result.credential) {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
@@ -29,7 +29,7 @@ function initApp() {
 
         // The signed-in user info.
         var user = result.user;
-    }).catch(function(error) {
+    }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -48,10 +48,10 @@ function initApp() {
     });
 
     // Listening for auth state changes.
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            document.getElementById('storage').innerHTML = '<span class="fa fa-user"></span> '+ user.displayName +' <span class="fa fa-caret-down">';
+            document.getElementById('storage').innerHTML = '<span class="fa fa-user"></span> ' + user.displayName + ' <span class="fa fa-caret-down">';
             document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-out"></span> Sign out';
         } else {
             // User is signed out.
@@ -65,6 +65,6 @@ function initApp() {
     document.getElementById('sign-in').addEventListener('click', toggleSignIn, false);
 }
 
-window.onload = function() {
+window.onload = function () {
     initApp();
 };
