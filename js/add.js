@@ -123,7 +123,8 @@ function estimate() {
 }
 
 /* Grab */
-var searchId = location.search.replace("?", "");
+var searchId = decodeURI(location.search.replace("?", ""));
+console.log(searchId);
 var xmlhttp = new XMLHttpRequest();
 var grab;
 
@@ -135,8 +136,10 @@ xmlhttp.onreadystatechange = function () {
 };
 if (isNaN(searchId)) {
     xmlhttp.open("GET", "data/usda.json", true);
+    console.log("usda");
 } else {
     xmlhttp.open("GET", "data/nwr.json", true);
+    console.log("nwr");
 }
 xmlhttp.send();
 
