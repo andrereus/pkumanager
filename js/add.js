@@ -135,11 +135,11 @@ xmlhttp.onreadystatechange = function () {
     }
 };
 if (isNaN(searchId)) {
-    xmlhttp.open("GET", "data/usda.json", true);
-    console.log("usda");
-} else {
     xmlhttp.open("GET", "data/nwr.json", true);
     console.log("nwr");
+} else {
+    xmlhttp.open("GET", "data/usda.json", true);
+    console.log("usda");
 }
 xmlhttp.send();
 
