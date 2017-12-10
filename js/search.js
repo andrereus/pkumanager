@@ -153,14 +153,18 @@ jQuery(function () {
     // Initialize
     if (localStorage.getItem("search") == "english") {
         $("#language").find(":selected").val("english");
+        console.log("set english");
     } else if (localStorage.getItem("search") == "german") {
         $("#language").find(":selected").val("german");
+        console.log("set german");
     }
 
     if ($("#language").find(":selected").val() == "english") {
         english();
+        console.log("search english");
     } else if ($("#language").find(":selected").val() == "german") {
         german();
+        console.log("search german");
     }
 
     // Listen
@@ -168,9 +172,11 @@ jQuery(function () {
         if ($("#language").find(":selected").val() == "english") {
             localStorage.setItem("search", "english");
             english();
+            console.log("click english");
         } else if ($("#language").find(":selected").val() == "german") {
             localStorage.setItem("search", "german");
             german();
+            console.log("click german");
         }
     });
 });
