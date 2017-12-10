@@ -45,8 +45,8 @@
             g.clearUserCookie = function (c, d, i) {
                 if (!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')) {
                     d = n.domain; while (1) {
-                    n.cookie = 'fs_uid=;domain=' + d +
-                        ';path=/;expires=' + new Date(0).toUTCString(); i = d.indexOf('.'); if (i < 0) break; d = d.slice(i + 1)
+                        n.cookie = 'fs_uid=;domain=' + d +
+                            ';path=/;expires=' + new Date(0).toUTCString(); i = d.indexOf('.'); if (i < 0) break; d = d.slice(i + 1)
                     }
                 }
             };
@@ -115,7 +115,9 @@
     <section class="clearfix" id="entry"></section>
     <section id="view">
         <p id="instruction-text">Search, calculate and add food in 8 seconds.</p>
-        <p id="instruction-text">Learn how to use this app under<a href="help.html"><span class="fa fa-question-circle"></span> Help</a>.</p>
+        <p id="instruction-text">Learn how to use this app under
+            <a href="help.html">
+                <span class="fa fa-question-circle"></span> Help</a>.</p>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
