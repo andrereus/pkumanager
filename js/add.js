@@ -145,11 +145,18 @@ xmlhttp.send();
 
 function grab(list) {
     for (var i = 0; i < list.length; i++) {
-        if (list[i].ndbno == searchId) {
-            description.value = list[i].desc;
-            phenylalanine.value = (list[i].phe * 1000).toFixed(2).replace(/\.?0+$/, "");
-            protein.value = list[i].prot.toFixed(2).replace(/\.?0+$/, "");
-            energy.value = list[i].kcal.toFixed(2).replace(/\.?0+$/, "");
+        if (isNaN(searchId)) {
+            if (list[i].desc == searchId) {
+                description.value = list[i].desc;
+                phenylalanine.value = (list[i].phe * 1000).toFixed(2).replace(/\.?0+$/, "");
+            }
+        } else {
+            if (list[i].ndbno == searchId) {
+                description.value = list[i].desc;
+                phenylalanine.value = (list[i].phe * 1000).toFixed(2).replace(/\.?0+$/, "");
+                protein.value = list[i].prot.toFixed(2).replace(/\.?0+$/, "");
+                energy.value = list[i].kcal.toFixed(2).replace(/\.?0+$/, "");
+            }
         }
     }
 }
