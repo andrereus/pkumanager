@@ -157,3 +157,8 @@ function grab(list) {
         }
     }
 }
+
+/* Hide */
+if (localStorage.getItem("hide") === "true") {
+    $(".energy").addClass("visuallyhidden");
+}

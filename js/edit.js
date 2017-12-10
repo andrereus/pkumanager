@@ -179,3 +179,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         }
     }
 });
+
+/* Hide */
+if (localStorage.getItem("hide") === "true") {
+    $(".energy").addClass("visuallyhidden");
+}
