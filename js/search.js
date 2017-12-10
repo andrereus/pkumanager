@@ -151,29 +151,26 @@ jQuery(function () {
     }
 
     // Initialize
-    var selected = $("#language").find(":selected").val();
-    var localSearch = localStorage.getItem("search");
-
-    if (localSearch == "english") {
-        selected = "english";
-    } else if (localSearch == "german") {
-        selected = "german";
+    if (localStorage.getItem("search") == "english") {
+        $("#language").find(":selected").val("english");
+    } else if (localStorage.getItem("search") == "german") {
+        $("#language").find(":selected").val("german");
     }
 
-    if (selected == "english") {
+    if ($("#language").find(":selected").val() == "english") {
         english();
-    } else if (selected == "german") {
+    } else if ($("#language").find(":selected").val() == "german") {
         german();
     }
 
     // Listen
     $("#language").on("change", function () {
-        if (selected == "english") {
-            english();
+        if ($("#language").find(":selected").val() == "english") {
             localStorage.setItem("search", "english");
-        } else if (selected == "german") {
-            german();
+            english();
+        } else if ($("#language").find(":selected").val() == "german") {
             localStorage.setItem("search", "german");
+            german();
         }
     });
 });
