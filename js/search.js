@@ -154,16 +154,16 @@ jQuery(function () {
     var selected = $("#language").find(":selected").val();
     var localSearch = localStorage.getItem("search");
 
-    if (selected == "english" && localSearch == "english") {
-        english();
-    } else if (selected == "english" && localSearch == "german") {
-        selected = "german";
-        german();
-    } else if (selected == "german" && localSearch == "german") {
-        german();
-    } else if (selected == "german" && localSearch == "english") {
+    if (localSearch == "english") {
         selected = "english";
+    } else if (localSearch == "german") {
+        selected = "german";
+    }
+
+    if (selected == "english") {
         english();
+    } else if (selected == "german") {
+        german();
     }
 
     // Listen
