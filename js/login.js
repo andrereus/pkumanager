@@ -55,7 +55,7 @@ function initApp() {
             document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-out"></span> Sign out';
         } else {
             // User is signed out.
-            document.getElementById('storage').innerHTML = 'Menu <span class="fa fa-caret-down">';
+            document.getElementById('storage').innerHTML = '<span class="fa fa-th-large"> Menu <span class="fa fa-caret-down">';
             document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-in"></span> Sign in with Google';
         }
 
