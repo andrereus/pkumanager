@@ -148,7 +148,7 @@ function grab(list) {
         if (isNaN(searchId)) {
             if (list[i].desc == searchId) {
                 description.value = list[i].desc;
-                phenylalanine.value = (list[i].phe * 1000).toFixed(2).replace(/\.?0+$/, "");
+                phenylalanine.value = (list[i].phe).replace(/\.?0+$/, "");
             }
         } else {
             if (list[i].ndbno == searchId) {
