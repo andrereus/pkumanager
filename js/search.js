@@ -151,18 +151,29 @@ jQuery(function () {
     }
 
     // Initialize
-    if ($("#language").find(":selected").val() == "english") {
+    var selected = $("#language").find(":selected").val();
+    var localSearch = localStorage.getItem("search");
+
+    if (selected == "english" && localSearch === "english") {
         english();
-    } else if ($("#language").find(":selected").val() == "german") {
+    } else if (selected == "english" && localSearch === "german") {
+        selected = "german";
         german();
+    } else if (selected == "german" && localSearch === "german") {
+        german();
+    } else if (selected == "german" && localSearch === "english") {
+        selected = "english";
+        english();
     }
 
     // Listen
     $("#language").on("change", function () {
-        if ($("#language").find(":selected").val() == "english") {
+        if (selected == "english") {
             english();
-        } else if ($("#language").find(":selected").val() == "german") {
+            localStorage.setItem("search", "english");
+        } else if (selected == "german") {
             german();
+            localStorage.setItem("search", "german");
         }
     });
 });
