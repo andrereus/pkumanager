@@ -154,14 +154,14 @@ jQuery(function () {
     var selected = $("#language").find(":selected").val();
     var localSearch = localStorage.getItem("search");
 
-    if (selected == "english" && localSearch === "english") {
+    if (selected == "english" && localSearch == "english") {
         english();
-    } else if (selected == "english" && localSearch === "german") {
+    } else if (selected == "english" && localSearch == "german") {
         selected = "german";
         german();
-    } else if (selected == "german" && localSearch === "german") {
+    } else if (selected == "german" && localSearch == "german") {
         german();
-    } else if (selected == "german" && localSearch === "english") {
+    } else if (selected == "german" && localSearch == "english") {
         selected = "english";
         english();
     }
