@@ -152,10 +152,10 @@ jQuery(function () {
 
     // Initialize
     if (localStorage.getItem("search") === "english") {
-        $("#language").find(":selected").val("english");
+        $("#language").val("english");
         console.log("set english");
     } else if (localStorage.getItem("search") === "german") {
-        $("#language").find(":selected").val("german");
+        $("#language").val("german");
         console.log("set german");
     }
 
@@ -169,11 +169,11 @@ jQuery(function () {
 
     // Listen
     $("#language").on("change", function (e) {
-        if ($(e.target).find(":selected").val() === "english") {
+        if ($("#language").find(":selected").val() === "english") {
             localStorage.setItem("search", "english");
             english();
             console.log("click english");
-        } else if ($(e.target).find(":selected").val() === "german") {
+        } else if ($("#language").find(":selected").val() === "german") {
             localStorage.setItem("search", "german");
             german();
             console.log("click german");
