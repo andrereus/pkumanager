@@ -168,12 +168,12 @@ jQuery(function () {
     }
 
     // Listen
-    $("#language").on("change", function () {
-        if ($("#language").find(":selected").val() == "english") {
+    $("#language").on("change", function (e) {
+        if ($(e.target).find(":selected").val() == "english") {
             localStorage.setItem("search", "english");
             english();
             console.log("click english");
-        } else if ($("#language").find(":selected").val() == "german") {
+        } else if ($(e.target).find(":selected").val() == "german") {
             localStorage.setItem("search", "german");
             german();
             console.log("click german");
