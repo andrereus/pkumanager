@@ -161,12 +161,13 @@ function renderEntries(list) {
             prot += list[i].prot;
             kcal += list[i].kcal;
         }
+    }
 
-        if (i <= 25) {
-            adder += "<li onclick=\"addFood(" + list[i].id + ")\" class=\"food-link\">" +
-                list[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
-                list[i].desc + "</li>";
-        }
+    var reverseList = list.reverse().slice(0,25);
+    for (var i = 0; i < reverseList.length; i++) {
+        adder += "<li onclick=\"addFood(" + reverseList[i].id + ")\" class=\"food-link\">" +
+            reverseList[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
+            reverseList[i].desc + "</li>";
     }
 
     table += "<tr>" +
