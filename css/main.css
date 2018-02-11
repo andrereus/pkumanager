@@ -879,7 +879,7 @@ th, td {
 .info-links > a {
     display: block;
     float: left;
-    margin: 5px;
+    padding: 5px;
 }
 
 /* Smaller than mobile */
