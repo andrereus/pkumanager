@@ -873,6 +873,10 @@ th, td {
     margin: 5px;
 }
 
+.empty-icon {
+    color: #eee;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {}
 

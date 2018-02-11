@@ -51,12 +51,12 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            document.getElementById('storage').innerHTML = '<span class="fa fa-user"></span> ' + user.displayName + ' <span class="fa fa-caret-down">';
-            document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-out"></span> Sign out';
+            document.getElementById('storage').innerHTML = '<i class="fas fa-user"></i> ' + user.displayName + ' <span class="fa fa-caret-down">';
+            document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-out-alt"></i> Sign out';
         } else {
             // User is signed out.
-            document.getElementById('storage').innerHTML = 'Menu <span class="fa fa-caret-down">';
-            document.getElementById('sign-in').innerHTML = '<span class="fa fa-sign-in"></span> Sign in with Google';
+            document.getElementById('storage').innerHTML = 'Menu <i class="fas fa-angle-down"></i>';
+            document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign in with Google';
         }
 
         document.getElementById('sign-in').classList.remove('disabled');
