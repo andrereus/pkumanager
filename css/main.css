@@ -731,7 +731,7 @@ th, td {
     margin-bottom: 0;
 }
 
-.instruction-text {
+#instruction-text {
     text-align: center;
 }
 
