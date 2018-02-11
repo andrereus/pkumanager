@@ -731,8 +731,13 @@ th, td {
     margin-bottom: 0;
 }
 
-#instruction-text {
+#no-data {
     text-align: center;
+    color: #eee;
+}
+
+#no-data svg {
+    margin: 10px;
 }
 
 #instruction {
@@ -871,10 +876,6 @@ th, td {
     display: block;
     float: left;
     margin: 5px;
-}
-
-.empty-icon {
-    color: #eee;
 }
 
 /* Smaller than mobile */
