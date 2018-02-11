@@ -51,7 +51,7 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            document.getElementById('storage').innerHTML = '<i class="fas fa-user"></i> ' + user.displayName + ' <span class="fa fa-caret-down">';
+            document.getElementById('storage').innerHTML = '<i class="fas fa-user"></i> ' + user.displayName + ' <i class="fas fa-angle-down"></i>';
             document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-out-alt"></i> Sign out';
         } else {
             // User is signed out.
