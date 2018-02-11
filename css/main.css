@@ -886,6 +886,22 @@ th, td {
     cursor: pointer;
 }
 
+#dialog {
+    display: none;
+}
+
+#dialog ul {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.food-link {
+    color: #4b7bec;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 5px 0;
+}
+
 /* Smaller than mobile */
 @media (max-width: 400px) {}
 
