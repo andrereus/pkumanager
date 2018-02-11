@@ -731,6 +731,10 @@ th, td {
     margin-bottom: 0;
 }
 
+.instruction-text {
+    text-align: center;
+}
+
 #no-data {
     text-align: center;
     color: #eee;
