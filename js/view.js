@@ -67,7 +67,7 @@ function renderEntries(list) {
 
     var reverseList = list.reverse().slice(0,30);
     for (var i = 0; i < reverseList.length; i++) {
-        adder += "<li><a href=\"add-duplicate.html?" + reverseList[i].id + "\" class=\"modal-link\">" +
+        adder += "<li><a href=\"duplicate.html?" + reverseList[i].id + "\" class=\"modal-link\">" +
         reverseList[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
         reverseList[i].desc + "</a></li>";
     }
