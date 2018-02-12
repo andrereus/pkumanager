@@ -22,104 +22,6 @@ $("#datepicker").datepicker({
   });
 $("#datepicker").datepicker("setDate", new Date());
 
-/* Add food */
-function addFood(searchId) {
-    /* Initialize */
-    var description;
-    var weight;
-    var phenylalanine;
-    var protein;
-    var energy;
-    var add;
-    var calculate;
-
-    /* Grab */
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            firebase.database().ref(user.uid).once("value").then(function (snapshot) {
-                var list = snapshot.val();
-
-                for (var key in list) {
-                    if (list[key].id == searchId) {
-                        description = list[key].desc;
-                        weight = list[key].wg.toFixed(2).replace(/\.?0+$/, "");
-                        phenylalanine = list[key].phe.toFixed(2).replace(/\.?0+$/, "");
-                        protein = list[key].prot.toFixed(2).replace(/\.?0+$/, "");
-                        energy = list[key].kcal.toFixed(2).replace(/\.?0+$/, "");
-                    }
-                }
-            });
-        } else {
-            var list = JSON.parse(localStorage.getItem("day"));
-
-            for (var i = 0; i < list.length; i++) {
-                if (list[i].id == searchId) {
-                    description = list[i].desc;
-                    weight = list[i].wg.toFixed(2).replace(/\.?0+$/, "");
-                    phenylalanine = list[i].phe.toFixed(2).replace(/\.?0+$/, "");
-                    protein = list[i].prot.toFixed(2).replace(/\.?0+$/, "");
-                    energy = list[i].kcal.toFixed(2).replace(/\.?0+$/, "");
-                }
-            }
-        }
-    });
-
-    /* Save */
-    var day, id;
-    var stamp = new Date();
-
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            firebase.database().ref(user.uid).once("value").then(function (snapshot) {
-                if (snapshot.val() !== null) {
-                    day = snapshot.val();
-                    for (var key in day) {
-                        id = day[key].id + 1;
-                    }
-                } else {
-                    id = 1;
-                }
-
-                var food = {
-                    "id": id,
-                    "date": stamp.getTime(),
-                    "desc": description,
-                    "wg": Number(weight),
-                    "phe": Number(phenylalanine),
-                    "prot": Number(protein),
-                    "kcal": Number(energy)
-                };
-
-                firebase.database().ref(user.uid).push(food, function (error) {
-                    window.location.assign("index.html");
-                });
-            });
-        } else {
-            if (localStorage.getItem("day") !== null) {
-                day = JSON.parse(localStorage.getItem("day"));
-                id = day[day.length - 1].id + 1;
-            } else {
-                day = [];
-                id = 1;
-            }
-
-            var food = {
-                "id": id,
-                "date": stamp.getTime(),
-                "desc": description,
-                "wg": Number(weight),
-                "phe": Number(phenylalanine),
-                "prot": Number(protein),
-                "kcal": Number(energy)
-            };
-
-            day.push(food);
-            localStorage.setItem("day", JSON.stringify(day));
-            window.location.assign("index.html");
-        }
-    });
-}
-
 /* Food list */
 function renderEntries(list) {
     var phe = 0;
@@ -163,11 +65,11 @@ function renderEntries(list) {
         }
     }
 
-    var reverseList = list.reverse().slice(0,25);
+    var reverseList = list.reverse().slice(0,30);
     for (var i = 0; i < reverseList.length; i++) {
-        adder += "<li onclick=\"addFood(" + reverseList[i].id + ")\" class=\"food-link\">" +
-            reverseList[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
-            reverseList[i].desc + "</li>";
+        adder += "<li><a href=\"add-duplicate.html?" + reverseList[i].id + "\" class=\"modal-link\">" +
+        reverseList[i].wg.toFixed(2).replace(/\.?0+$/, "") + "&nbsp;g " +
+        reverseList[i].desc + "</a></li>";
     }
 
     table += "<tr>" +
