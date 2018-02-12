@@ -890,6 +890,10 @@ th, td {
     display: none;
 }
 
+#dialog p {
+    margin: 5px 0 0;
+}
+
 #dialog ul {
     list-style-type: none;
     margin: 5px 0 0;
