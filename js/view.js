@@ -139,8 +139,7 @@ function initializeModal() {
                 window.location.href = "add.html";
             }
         },
-        maxHeight: 450,
-        autoOpen: true
+        maxHeight: 450
     });
 
     $("#opener").on("click", function() {
@@ -168,7 +167,7 @@ function loadData() {
             if (localStorage.getItem("day") !== null) {
                 var list = JSON.parse(localStorage.getItem("day"));
                 renderEntries(list);
-                initializeModal()
+                initializeModal();
             }
         }
     });
