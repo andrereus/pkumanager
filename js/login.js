@@ -7,6 +7,7 @@ function toggleSignIn() {
         firebase.auth().signInWithRedirect(provider);
     } else {
         firebase.auth().signOut();
+        window.location.href = "index.html";
     }
 
     document.getElementById('sign-in').classList.add('disabled');

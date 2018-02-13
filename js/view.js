@@ -130,6 +130,24 @@ function renderEntries(list) {
     view.innerHTML = table;
 }
 
+/* Dialog */
+function initializeModal() {
+    $("#dialog").dialog({
+        autoOpen: false,
+        buttons: {
+            "New": function() {
+                window.location.href = "add.html";
+            }
+        },
+        maxHeight: 450,
+        autoOpen: true
+    });
+
+    $("#opener").on("click", function() {
+        $("#dialog").dialog("open");
+    });
+}
+
 /* Load data */
 function loadData() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -142,20 +160,16 @@ function loadData() {
                     renderEntries(list);
                     // TODO: Loop behavior
                 }
-                // else {
-                //     var empty = "<table><tbody><tr><td>No food entries.</td></tr></tbody></table>";
-                //     view.innerHTML = empty;
-                // }
+            });
+            $("#opener").on("click", function() {
+                window.location.href = "add.html";
             });
         } else {
             if (localStorage.getItem("day") !== null) {
                 var list = JSON.parse(localStorage.getItem("day"));
                 renderEntries(list);
+                initializeModal()
             }
-            // else {
-            //     var empty = "<table><tbody><tr><td>No food entries.</td></tr></tbody></table>";
-            //     view.innerHTML = empty;
-            // }
         }
     });
 }
@@ -172,21 +186,4 @@ $("#datepicker").datepicker({
 
 $("#datepicker").change(function () {
     loadData();
-});
-
-/* Dialog */
-$(function() {
-    $("#dialog").dialog({
-        autoOpen: false,
-        buttons: {
-            "New": function() {
-                window.location.href = "add.html";
-            }
-        },
-        maxHeight: 450
-    });
-
-    $("#opener").on("click", function() {
-        $("#dialog").dialog("open");
-    });
 });
