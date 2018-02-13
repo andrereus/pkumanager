@@ -167,8 +167,8 @@ function loadData() {
             if (localStorage.getItem("day") !== null) {
                 var list = JSON.parse(localStorage.getItem("day"));
                 renderEntries(list);
-                initializeModal();
             }
+            initializeModal();
         }
     });
 }
