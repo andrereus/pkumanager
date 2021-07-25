@@ -1101,3 +1101,19 @@ http://www.phpied.com/delay-loading-your-print-css/
         page-break-after: avoid;
     }
 }
+
+.pku-tools {
+    text-align: center;
+    background: #3498db;
+    color: #fff;
+    padding: 8px 0;
+}
+
+.pku-tools > p {
+    margin-bottom: 0;
+}
+
+.pku-tools a {
+    color: #fff;
+    text-decoration: underline;
+}
