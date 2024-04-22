@@ -10,7 +10,7 @@ function toggleSignIn() {
         window.location.href = "index.html";
     }
 
-    document.getElementById('sign-in').classList.add('disabled');
+    // document.getElementById('sign-in').classList.add('disabled');
 }
 
 /**
@@ -53,17 +53,17 @@ function initApp() {
         if (user) {
             // User is signed in.
             document.getElementById('storage').innerHTML = '<i class="fas fa-user"></i> ' + user.displayName + ' <i class="fas fa-angle-down"></i>';
-            document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-out-alt"></i> Sign out';
+            // document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-out-alt"></i> Sign out';
         } else {
             // User is signed out.
             document.getElementById('storage').innerHTML = 'Menu <i class="fas fa-angle-down"></i>';
-            document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign in with Google';
+            // document.getElementById('sign-in').innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign in with Google';
         }
 
-        document.getElementById('sign-in').classList.remove('disabled');
+        // document.getElementById('sign-in').classList.remove('disabled');
     });
 
-    document.getElementById('sign-in').addEventListener('click', toggleSignIn, false);
+    // document.getElementById('sign-in').addEventListener('click', toggleSignIn, false);
 }
 
 window.onload = function () {
