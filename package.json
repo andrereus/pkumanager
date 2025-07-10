@@ -1,20 +1,14 @@
 {
   "name": "pkumanager",
-  "version": "2.0.0",
-  "description": "PKU Manager",
-  "scripts": {
-    "serve": "browser-sync start --server --files \"**/*\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pkumanager/pkumanager.git"
-  },
-  "author": "Andre Reus",
-  "bugs": "https://github.com/pkumanager/pkumanager/issues",
-  "homepage": "http://pkumanager.com",
-  "license": "UNLICENSED",
+  "version": "4.0.0",
   "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
-    "browser-sync": "^2.18.12"
+    "@eslint/js": "^9.30.1",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2"
   }
 }
